@@ -1,0 +1,62 @@
+name: Twitter APIs
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 14
+description: |
+  Retrieve all the follower of a specified Twitter username.
+note:
+  title: instructions
+  content: |
+   In this example we're using the twit module in order to use the Twitter APIs.
+    After configuring the library saving all the Twitter authentication tokens the as secrets, we're first asking all the ids of the Stamplay's Twitter account and then we're using async module in order to process them and retrieve information for each one of them.
+    Please note that due to Twitter's API limit requests, this script may not work properly with accounts that has an high number of followers.
+code:
+  es6: |
+    const Twit = require('twit'); 
+    const async = require('async'); 
+    
+    module.exports = function (context, cb) { 
+      var T = new Twit({ 
+        consumer_key: context.secrets.consumer_key,
+        consumer_secret: context.secrets.consumer_secret,
+        access_token: context.secrets.access_token,
+        access_token_secret: context.secrets.access_token_secret 
+      }); 
+      var finalData = []; 
+      var eachFn = function (id, eachCb) { 
+        var url = 'users/show'; 
+        T.get(url, { id: id }, function (err, data, response) { 
+          if (err) { eachCb(err); } else { 
+            finalData.push(data); eachCb(); 
+          } }); 
+      }; 
+      var finalFn = function (err) { 
+        cb(err, finalData); 
+      }; 
+      T.get('followers/ids', { 
+        screen_name: context.data.profile || 'stamplay' 
+      }, function (err, data, response) { 
+        if(data && data.ids && data.ids[0]){
+          var one = [data.ids[0]];
+          async.eachSeries(one, eachFn, finalFn); 
+        }else{
+          callback('No follower found');   
+        }
+      });
+    } 
+sampleRequest: 
+  method: 'POST'
+  type: 'json'
+  mode: 'body'
+  data: |
+    {"profile" : "stamplay"}
+settings:
+  parse: true
+  merge: true
+secrets : 
+  consumer_key : 'TWITTER_CONSUMER_KEY'
+  consumer_secret : 'TWITTER_CONSUMER_SECRET'
+  access_token : 'TWITTER_ACCESS_TOKEN'
+  access_token_secret : 'TWITTER_ACCESS_TOKEN_SECRET'

@@ -1,0 +1,33 @@
+name: Random number
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 4
+description: |
+  How to generate a random number using a Code Block.
+note:
+  title: instructions
+  content: |
+    In this example the CodeBlock will return a random number between 1 and 100.
+    We'll extend later this feature by making the minimum and maximum value parametric by query parameter or via query params.
+code:
+  es6: |
+    module.exports = function (cb) {
+      const min = 1;
+      const max = 100;
+      const random = Math.floor((Math.random() * max) + min);
+     
+      return cb(null, {
+        random,
+      });
+    };
+sampleRequest: 
+  method: 'POST'
+  type: 'json'
+  mode: 'body'
+  data: |
+    {}
+settings:
+  parse: true
+  merge: true

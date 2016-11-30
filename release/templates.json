@@ -1,0 +1,491 @@
+[
+  {
+    "name": "Hello world",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 1,
+    "description": "Hello world.\n",
+    "note": {
+      "title": "instructions",
+      "content": "As you can see the function we're defining takes a callback \nfunction that must be invoked when the code is completed.\nSince this code will run in a Node.js environment the callback\nwill take as a first argument an error and as a second argument \nthe result which can be a string, a number, or an object that will \nbe stringified as JSON.\n"
+    },
+    "code": {
+      "es6": "module.exports = function (cb) {\n  /**\n  *    \n  * if you want to send a json instead\n  *  return cb(null,{\n  *    hello: 'world'\n  *  });\n  */ \n  return cb(null, 'Hello world!');\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "3f984f70b5ec94e9f8237c9425244aee"
+  },
+  {
+    "name": "Accessing console",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 2,
+    "description": "How to see real time console.logs.\n",
+    "note": {
+      "title": "instructions",
+      "content": "For debugging purposes can be useful have a look at the variable\nvalues by using console.log. You can see real time logs by enabling\nthe console from the Editor.\n\nAfter each Code Block execution you can see the request and the\nresponse body in the Stamplay Editor from the Logs view.\n"
+    },
+    "code": {
+      "es6": "module.exports = function (cb) {\n  /**\n   * You can see the console.log output in the Code Block log from the real time console\n   */\n  console.log('Hello world in console');\n  return cb(null, 'Hello world, check the logs section in the Editor!');\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "c588f924b37642ee69d76e3c974d4c71"
+  },
+  {
+    "name": "Handling errors",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 3,
+    "description": "How to handle errors in Code Blocks.\n",
+    "note": {
+      "title": "instructions",
+      "content": "Sometimes you just want to return an error, other time you just want to handle it in a nicer way.\nThe callback function can be invoked with a string or an object that has the property `message` in it in order to make the CodeBlock return with an error.\n"
+    },
+    "code": {
+      "es6": "module.exports = function (cb) {\n  return cb({\n    message: 'Sending error in obj'\n  });\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "d4b9085a415ae9ff0a43392533c0d997"
+  },
+  {
+    "name": "Random number",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 4,
+    "description": "How to generate a random number using a Code Block.\n",
+    "note": {
+      "title": "instructions",
+      "content": "In this example the CodeBlock will return a random number between 1 and 100.\nWe'll extend later this feature by making the minimum and maximum value parametric by query parameter or via query params.\n"
+    },
+    "code": {
+      "es6": "module.exports = function (cb) {\n  const min = 1;\n  const max = 100;\n  const random = Math.floor((Math.random() * max) + min);\n \n  return cb(null, {\n    random,\n  });\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "3d3826f895239f8f44219f397b336fec"
+  },
+  {
+    "name": "Asynchronous code",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 5,
+    "description": "Asynchronous code execution in Code Blocks.\n",
+    "note": {
+      "title": "instructions",
+      "content": "Since you have a callback you can execute any kind of asynchronous code you like.\nHere you can see that we're just using the setTimeout function but you can connect to a database (but make sure to use secrets!), execute a query and then return the results of the query.\nPlease note that a CodeBlock execution can last at maximum 60 seconds.\n"
+    },
+    "code": {
+      "es6": "module.exports = function (cb) {\n  return setTimeout(function () {\n    return cb(null, 'Hi');\n  }, 1000);\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "657c9449ad72e8a201603f985893ae05"
+  },
+  {
+    "name": "Making HTTP requests",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 6,
+    "description": "How to make HTTP request in Code Blocks .\n",
+    "note": {
+      "title": "instructions",
+      "content": "Since you're executing Node.js code you are able to do HTTP[S] requests from your CodeBlock in a really easy way.\nTo make your life easier you can use the request module and many others.\n"
+    },
+    "code": {
+      "es6": "const request = require('request@2.67.0');\nmodule.exports = function (cb) {\n  return request('http://google.com', function (err, response, body) {\n    return cb(err, response.statusCode);\n  });\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "a3e43483726e0c230f732fbc990b05ea"
+  },
+  {
+    "name": "Hello name",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 7,
+    "description": "How to access to request body or query parameter.\n",
+    "note": {
+      "title": "instructions",
+      "content": "In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.\n"
+    },
+    "code": {
+      "es6": "module.exports = function (context, callback) {\n  const name = context.data.name || \"World\";\n  return callback(null, \"Hello \" + name);\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{ \"name\" : \"there\"}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "029c3bbeac4a04b67c0179eb4b34df6a"
+  },
+  {
+    "name": "Accessing request",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 8,
+    "description": "How to access to request body or query parameter.\n",
+    "note": {
+      "title": "instructions",
+      "content": "In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.\nThis example is showing you a CodeBlock that is getting the url parameter in query string is trying to resolve its IP address. \nIf an error occurs the callback will be invoked with the error and it will be back to the client, otherwise a 200 response will be sent.\nIf you want to distinct query parameters from the body parameters you can access the request parameters as follows\nquery parameters in context.query\nbody parameters in context.body\nsecrets in context.secrets\ncontext.data is just a convenient way to merge all the request parameters in an accessible key.\n"
+    },
+    "code": {
+      "es6": "const dns = require('dns');\nmodule.exports = function (context, callback) {\n  return dns.resolve(context.query.url, callback);\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{ \"url\" : \"google.com\"}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "3bbad96388c012557486cef8e705de88"
+  },
+  {
+    "name": "Handling secrets",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 9,
+    "description": "How to access secrets in Code Blocks.\n",
+    "note": {
+      "title": "instructions",
+      "content": "Since the server side of an application is the one that keeps passwords, tokens and connections string the CodeBlocks allows you to store this kind of informations securely by using the secret area in the Editor.\nAll the secrets stored in that area are saved encrypted and you can use it in your Codeblock by accessing to context.secrets.yourKey. Please avoid to return these values to the client.\nIn this example we're making an HTTP request with the authorization header using a password stored securely in the key named secretKey.\n"
+    },
+    "code": {
+      "es6": "const request = require('request');\nconst url = 'https://codeblocks.stamplayapp.com/api/webhook/v1/get/catch';\n\nmodule.exports = function (context, cb) {\n  const password = context.secrets.secretKey;\n  return request(url, cb)\n    .auth('username', password);\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{ \"url\" : \"google.com\"}\n"
+    },
+    "secrets": {
+      "secretKey": "secret"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "33fd73cdb0db817026cc0762a099d1f1"
+  },
+  {
+    "name": "Parametric random number",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 10,
+    "description": "How to access to request body or query parameter.\n",
+    "note": {
+      "title": "instructions",
+      "content": "In this example the CodeBlock will return a random number between 1 and 100.\nWe'll extend later this feature by making the minimum and maximum value parametric by query parameter or via query params.\n"
+    },
+    "code": {
+      "es6": "const min = 1;\nconst max = 100;\n\nmodule.exports = function (cb) {\n  const random = Math.floor((Math.random() * max) + min);\n  return cb(null, {\n    random,\n  });\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "f31d5487b5d8a1f9c6555c5f6f76bf93"
+  },
+  {
+    "name": "Levenshtein distance",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 11,
+    "description": "How to compute Levenshtein distance across two strings using the fast-levenshtein distance.\n",
+    "note": {
+      "title": "instructions",
+      "content": "This example will allow you to create an API endpoint for your application that will be able to compute the Levenshtein distance between two given strings.\nWe're using the module fast-levenshtein which is available in the CodeBlocks, the input is allowed from both request body and query parameters.\n"
+    },
+    "code": {
+      "es6": "const levenshtein = require('fast-levenshtein');\n\nmodule.exports = function (context, cb) {\n  return levenshtein.getAsync(context.data.first, context.data.second, (err, result) => {\n    return cb(err , {distance : result});\n  });\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{\"first\" : \"test\", \"second\" : \"tent\"}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "1d121fb496b6759ab29fda85a4ac6b0a"
+  },
+  {
+    "name": "Connecting to a database",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 12,
+    "description": "How to connect to an external Redis database using a Code Block.\n",
+    "note": {
+      "title": "instructions",
+      "content": "One of the coolest thing you can do with a server is connecting at your own database, and you can do it with CodeBlocks too!\nYou can look for the available Node.js modules that you can use here\nMongo\nRedis\nMySql\nApache Cassandra\nare only an example of what we can connect to.\nIn this example we will connect to an external Redis database the url, the port and the password are encrypted in order to not leak any kind of private information.\n\nAfter the connection and the authentication we're saving a value, retrieving it and returning to the client, few lines of code that saved us from creating a Node.js server and managing during all its lifetime.\n"
+    },
+    "code": {
+      "es6": "module.exports = function (context, cb) {\n  var redis = require('redis');\n  var client = redis.createClient(context.data.port, context.data.url, {});\n  client.auth(context.data.pwd, function () {\n    client.set(\"stringkey\", \"string val\");\n    client.get(\"stringkey\", function (err, reply) {\n      // reply is null when the key is missing\n      console.log(reply);\n      cb(null, reply);\n    });\n  });\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{\"port\" : 6379, \"url\" : \"url\"}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "ee4506c4511a6f713fec09f9547c32cc"
+  },
+  {
+    "name": "Face detection with Cloudinary",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 13,
+    "description": "Face detection made easy using Cloudinary service and node module.\n",
+    "note": {
+      "title": "instructions",
+      "content": "Our available modules include among third party services Cloudinary, an image and video managment on the cloud.\nHere is an example of how to use it for uploading an image on their service and request a face detection.\nAfter requiring and configuring the library using the secrets area in order to save the key and the secret, \nwe're uploading the image from an url and requesting the face detection feature.\n"
+    },
+    "code": {
+      "es6": "const cloudinary = require('cloudinary');\nconst options = {\n  public_id: \"eager_sample\",\n  eager: {\n    gravity: \"face\",\n    width: 200,\n    height: 200,\n    crop: 'thumb'\n  }\n}\n\nmodule.exports = function (context, cb) {\n  cloudinary.config({\n    cloud_name: context.data.cloud_name,\n    api_key: context.data.api_key,\n    api_secret: context.data.api_secret,\n    secure: true\n  });\n\n  cloudinary.uploader.upload(\n    context.data.url,\n    function (result) {\n      return cb(null, result);\n    }, options);\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{\"url\" : \"https://res.cloudinary.com/demo/image/upload/butterfly.jpg\"}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "secrets": {
+      "api_key": "CLOUDINARY_API_KEY",
+      "api_secret": "CLOUDINARY_API_SECRET"
+    },
+    "id": "e571889db752e670b114e7242979ad1f"
+  },
+  {
+    "name": "Twitter APIs",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 14,
+    "description": "Retrieve all the follower of a specified Twitter username.\n",
+    "note": {
+      "title": "instructions",
+      "content": "In this example we're using the twit module in order to use the Twitter APIs.\n After configuring the library saving all the Twitter authentication tokens the as secrets, we're first asking all the ids of the Stamplay's Twitter account and then we're using async module in order to process them and retrieve information for each one of them.\n Please note that due to Twitter's API limit requests, this script may not work properly with accounts that has an high number of followers.\n"
+    },
+    "code": {
+      "es6": "const Twit = require('twit'); \nconst async = require('async'); \n\nmodule.exports = function (context, cb) { \n  var T = new Twit({ \n    consumer_key: context.secrets.consumer_key,\n    consumer_secret: context.secrets.consumer_secret,\n    access_token: context.secrets.access_token,\n    access_token_secret: context.secrets.access_token_secret \n  }); \n  var finalData = []; \n  var eachFn = function (id, eachCb) { \n    var url = 'users/show'; \n    T.get(url, { id: id }, function (err, data, response) { \n      if (err) { eachCb(err); } else { \n        finalData.push(data); eachCb(); \n      } }); \n  }; \n  var finalFn = function (err) { \n    cb(err, finalData); \n  }; \n  T.get('followers/ids', { \n    screen_name: context.data.profile || 'stamplay' \n  }, function (err, data, response) { \n    if(data && data.ids && data.ids[0]){\n      var one = [data.ids[0]];\n      async.eachSeries(one, eachFn, finalFn); \n    }else{\n      callback('No follower found');   \n    }\n  });\n} \n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{\"profile\" : \"stamplay\"}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "secrets": {
+      "consumer_key": "TWITTER_CONSUMER_KEY",
+      "consumer_secret": "TWITTER_CONSUMER_SECRET",
+      "access_token": "TWITTER_ACCESS_TOKEN",
+      "access_token_secret": "TWITTER_ACCESS_TOKEN_SECRET"
+    },
+    "id": "a56e25156749296ef9945087e3a0cac6"
+  },
+  {
+    "name": "Response with custom headers",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 15,
+    "description": "How to send custom response headers.\n",
+    "note": {
+      "title": "instructions",
+      "content": "We can easily add some custom headers to the response since that with full control we can control everything.\n"
+    },
+    "code": {
+      "es6": "module.exports = function(context, req, res) {\n  res.setHeader('x-custom-header', 'custom!');\n  res.writeHead(200, {'Content-Type': 'application/json'});\n  var result = {\n    hello : 'world'\n  };\n  res.end(JSON.stringify(result));\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "a84ef7894be3c41161f92edcee1788dc"
+  },
+  {
+    "name": "Accessing the request",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 16,
+    "description": "How to access the raw request.\n",
+    "note": {
+      "title": "instructions",
+      "content": "In order to have a full control of the CodeBlock we need to use a third, different function signature that takes three arguments context,req and res.\nIn this example we'll send a json in the response but since now we've got control full control of it we'll need to set the correct Content-Type manually.\nThis kind of control open to developers infinite use cases that process the request in different and unusual ways.\n"
+    },
+    "code": {
+      "es6": "module.exports = function(context, req, res){\n res.writeHead(200, { 'Content-Type': 'application/json'});\n res.end('{\"hello\": \"world\"}');\n}\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{}\n"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "d030f97969ea88dbbce1a0c11a3e151f"
+  },
+  {
+    "name": "Handling multipart/form-data content-type",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 17,
+    "description": "How to handle multipart/form-data content-type\n",
+    "note": {
+      "title": "instructions",
+      "content": "With full control function signature since we have the raw request we can afford to parse the multipart/form-data content type.\nTo do so we need to disable the Parse body property that can be found in the Properties tab.\nIn this example we'll send a file and using the node module named multiparty we'll parse the request in order to access the fields and the files server side.\n"
+    },
+    "code": {
+      "es6": "const multiparty = require('multiparty@4.1.2');\n\nmodule.exports = function(context, req, res){\n    var form = new multiparty.Form();\n\n    form.parse(req, function(err, fields, files) {\n      res.writeHead(200, {'content-type': 'application/json'});\n      const result = {fields, files};\n      res.end(JSON.stringify(result));\n    });  \n}\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": {}
+    },
+    "settings": {
+      "parse": false,
+      "merge": true
+    },
+    "id": "f95973f1a21435f03962dce2165ac149"
+  }
+]

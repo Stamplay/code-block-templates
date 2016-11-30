@@ -1,0 +1,34 @@
+name: Accessing request
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 8
+description: |
+  How to access to request body or query parameter.
+note:
+  title: instructions
+  content: |
+    In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.
+    This example is showing you a CodeBlock that is getting the url parameter in query string is trying to resolve its IP address. 
+    If an error occurs the callback will be invoked with the error and it will be back to the client, otherwise a 200 response will be sent.
+    If you want to distinct query parameters from the body parameters you can access the request parameters as follows
+    query parameters in context.query
+    body parameters in context.body
+    secrets in context.secrets
+    context.data is just a convenient way to merge all the request parameters in an accessible key.
+code:
+  es6: |
+    const dns = require('dns');
+    module.exports = function (context, callback) {
+      return dns.resolve(context.query.url, callback);
+    };
+sampleRequest: 
+  method: 'POST'
+  type: 'json'
+  mode: 'body'
+  data: |
+    { "url" : "google.com"}
+settings:
+  parse: true
+  merge: true

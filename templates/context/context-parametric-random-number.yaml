@@ -1,0 +1,33 @@
+name: Parametric random number
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 10
+description: |
+  How to access to request body or query parameter.
+note:
+  title: instructions
+  content: |
+    In this example the CodeBlock will return a random number between 1 and 100.
+    We'll extend later this feature by making the minimum and maximum value parametric by query parameter or via query params.
+code:
+  es6: |
+    const min = 1;
+    const max = 100;
+    
+    module.exports = function (cb) {
+      const random = Math.floor((Math.random() * max) + min);
+      return cb(null, {
+        random,
+      });
+    };
+sampleRequest: 
+  method: 'POST'
+  type: 'json'
+  mode: 'body'
+  data: |
+    {}
+settings:
+  parse: true
+  merge: true

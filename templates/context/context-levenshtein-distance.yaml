@@ -1,0 +1,31 @@
+name: Levenshtein distance
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 11
+description: |
+  How to compute Levenshtein distance across two strings using the fast-levenshtein distance.
+note:
+  title: instructions
+  content: |
+    This example will allow you to create an API endpoint for your application that will be able to compute the Levenshtein distance between two given strings.
+    We're using the module fast-levenshtein which is available in the CodeBlocks, the input is allowed from both request body and query parameters.
+code:
+  es6: |
+    const levenshtein = require('fast-levenshtein');
+    
+    module.exports = function (context, cb) {
+      return levenshtein.getAsync(context.data.first, context.data.second, (err, result) => {
+        return cb(err , {distance : result});
+      });
+    };
+sampleRequest: 
+  method: 'POST'
+  type: 'json'
+  mode: 'body'
+  data: |
+    {"first" : "test", "second" : "tent"}
+settings:
+  parse: true
+  merge: true

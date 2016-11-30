@@ -1,0 +1,22 @@
+{
+  "name": "stamplay-editor-templates",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Stamplay editor templates.",
+  "scripts": {},
+  "keywords": [
+    "stamplay",
+    "editor",
+    "templates"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-aws-s3": "^0.14.5",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-http": "^2.0.1",
+    "load-grunt-config": "^0.19.2"
+  }
+}

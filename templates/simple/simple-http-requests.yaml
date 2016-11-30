@@ -1,0 +1,30 @@
+name: Making HTTP requests
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 6
+description: |
+  How to make HTTP request in Code Blocks .
+note:
+  title: instructions
+  content: |
+    Since you're executing Node.js code you are able to do HTTP[S] requests from your CodeBlock in a really easy way.
+    To make your life easier you can use the request module and many others.
+code:
+  es6: |
+    const request = require('request@2.67.0');
+    module.exports = function (cb) {
+      return request('http://google.com', function (err, response, body) {
+        return cb(err, response.statusCode);
+      });
+    };
+sampleRequest: 
+  method: 'POST'
+  type: 'json'
+  mode: 'body'
+  data: |
+    {}
+settings:
+  parse: true
+  merge: true

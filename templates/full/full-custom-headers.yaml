@@ -1,0 +1,31 @@
+name: Response with custom headers
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 15
+description: |
+  How to send custom response headers.
+note:
+  title: instructions
+  content: |
+    We can easily add some custom headers to the response since that with full control we can control everything.
+code:
+  es6: |
+    module.exports = function(context, req, res) {
+      res.setHeader('x-custom-header', 'custom!');
+      res.writeHead(200, {'Content-Type': 'application/json'});
+      var result = {
+        hello : 'world'
+      };
+      res.end(JSON.stringify(result));
+    };
+sampleRequest: 
+  method: 'POST'
+  type: 'json'
+  mode: 'body'
+  data: |
+    {}
+settings:
+  parse: true
+  merge: true

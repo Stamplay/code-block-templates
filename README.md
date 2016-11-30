@@ -8,7 +8,7 @@ Code Block templates are available from the [Stamplay Editor](https://editor.sta
 
 ### How to create a template
 
-If you have a Code Block to share, you can create a _Pull Request_ and add your template. The team will review it and once it is aproved the template will be available through `Stamplay Editor`.
+If you have a Code Block to share, you can create a _Pull Request_ and add your template. The team will review it and once it is approved the template will be available through `Stamplay Editor`.
 
 #### Fields
 

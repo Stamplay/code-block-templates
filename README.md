@@ -2,6 +2,9 @@
 
 Here you will find the entire list of templates that you can use from `Stamplay Editor`.
 
+![Code Block Templates](https://media.giphy.com/media/l0MYNTiNFQJbPaDaU/source.gif)
+
+
 ## Templates
 
 Code Block templates are available from the [Stamplay Editor](https://editor.stamplay.com).

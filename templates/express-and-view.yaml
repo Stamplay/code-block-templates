@@ -1,0 +1,48 @@
+name: Express with view
+type: sample
+order: 19
+author: 
+  name: verlic
+  link: https://github.com/Verlic
+description: |
+  A sample about how to use Express with embeded view from Code Block.
+note:
+code:
+  es6: |
+    const express = require('express');
+    const fromExpress = require('webtask-tools').fromExpress;
+    const bodyParser = require('body-parser');
+    const app = express();
+
+    app.use(bodyParser.json());
+
+    app.get('/', (req, res) => {
+      const HTML = renderView({
+        title: 'My Code Block View',
+        body: '<h1>Simple Code Block view</h1>'
+      });
+
+      res.set('Content-Type', 'text/html');
+      res.status(200).send(HTML);
+    });
+
+    module.exports = fromExpress(app);
+
+    function renderView(locals) {
+      return `
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="utf-8">
+              <title>${locals.title}</title>
+            </head>
+
+            <body>
+              ${locals.body}
+            </body>
+            </html>
+          `;
+    }
+settings : 
+  parse : false
+  merge : false

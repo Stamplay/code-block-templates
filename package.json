@@ -1,8 +1,8 @@
 {
-  "name": "stamplay-editor-templates",
-  "version": "1.0.1",
+  "name": "code-block-templates",
+  "version": "1.0.2",
   "private": false,
-  "description": "Stamplay editor templates.",
+  "description": "Code Block templates.",
   "scripts": {},
   "keywords": [
     "stamplay",

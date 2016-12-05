@@ -1,0 +1,62 @@
+name: Express with mlab
+type: sample
+author: 
+  name: verlic
+  link: https://github.com/Verlic
+order: 20
+description: |
+  A sample about how to use Express with mlab from Code Blocks.
+note:
+  title: instructions
+  content: |
+    You must set a valid <code>MONGO_URL</code> Code Block secret for it to work.
+    ie. <code>mongodb://user:pwd@ds012345.mlab.com:56789/dbname</code>
+    <br/>
+    <br/>
+    More info about <a href="http://docs.mlab.com" target="_blank">MLab</a>
+code:
+  es6: |
+    const bodyParser = require('body-parser');
+    const express = require('express');
+    const Webtask = require('webtask-tools');
+    const MongoClient = require('mongodb').MongoClient;
+    const ObjectID = require('mongodb').ObjectID;
+
+    const collection = 'my-collection';
+    const server = express();
+
+    server.use(bodyParser.json());
+
+    server.get('/:_id', (req, res, next) => {
+      const MONGO_URL = req.webtaskContext.secrets.MONGO_URL;
+      const _id = req.params._id;
+      MongoClient.connect(MONGO_URL, (err, db) => {
+        if (err) return next(err);
+        db.collection(collection).findOne({ _id : new ObjectID(_id) }, (err, result) => {
+          db.close();
+          if (err) return next(err);
+          res.status(200).send(result);
+        });
+      });
+    });
+
+    server.post('/', (req, res, next) => {
+      const MONGO_URL = req.webtaskContext.secrets.MONGO_URL;
+      // Do data sanitation here.
+      const model = req.body;
+      MongoClient.connect(MONGO_URL, (err, db) => {
+        if (err) return next(err);
+        db.collection(collection).insertOne(model, (err, result) => {
+          db.close();
+          if (err) return next(err);
+          res.status(201).send(result);
+        });
+      });
+    });
+
+    module.exports = Webtask.fromExpress(server);
+secrets:
+  MONGO_URL : 'REPLACE_WITH_MONGO_URL'
+settings:
+  parse: false
+  merge: false

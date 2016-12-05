@@ -15,8 +15,11 @@
     "grunt": "^1.0.1",
     "grunt-aws-s3": "^0.14.5",
     "grunt-cli": "^1.2.0",
+    "grunt-concurrent": "^2.3.1",
     "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-http": "^2.0.1",
+    "grunt-nodemon": "^0.4.2",
     "load-grunt-config": "^0.19.2"
   }
 }

@@ -1,0 +1,26 @@
+name: Express
+type: sample
+order: 18
+author: 
+  name: jcenturion
+  link: https://github.com/jcenturion
+description: |
+  A sample about how to use Express from Code Block.
+note:
+code:
+  es6: |
+    const express    = require('express');
+    const Webtask    = require('webtask-tools');
+    const bodyParser = require('body-parser');
+    const app = express();
+
+    app.use(bodyParser.json());
+
+    app.get('/', function (req, res) {
+      res.sendStatus(200);
+    });
+
+    module.exports = Webtask.fromExpress(app);
+settings :
+  parse: false
+  merge: false

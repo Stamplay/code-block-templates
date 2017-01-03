@@ -25,7 +25,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "fce514ed4687c203a6d1ef417543475e"
+    "id": "f5deebcfec5b42c374210ec20ec2d41a"
   },
   {
     "name": "Accessing console",
@@ -53,7 +53,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "9011dfb427a0e6f2548c4145351af3d7"
+    "id": "9884ea0fa8b62272cc2f1eb658787fb6"
   },
   {
     "name": "Handling errors",
@@ -81,7 +81,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "831d720c1808c8afc737d00d981075df"
+    "id": "a26ad968361eaddf54422aea0d04d10a"
   },
   {
     "name": "Random number",
@@ -109,7 +109,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "3b995a6824523be117920799c86bc775"
+    "id": "266a450d748929457c00657444839636"
   },
   {
     "name": "Asynchronous code",
@@ -137,7 +137,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "678c7ca91cd06ffbba6248b70953c0ae"
+    "id": "a40caf3fcdcf559f5118664372c3e476"
   },
   {
     "name": "Making HTTP requests",
@@ -165,7 +165,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "500d0265efad86128551cbdd52e8630f"
+    "id": "5b59bbea91b9a0e66cb7c5b64fb71437"
   },
   {
     "name": "Hello name",
@@ -193,7 +193,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "9e01d8e78b8b21e677e4b9181852784c"
+    "id": "108a2b7593f6c0b1d920824b57ade7bf"
   },
   {
     "name": "Accessing request",
@@ -221,7 +221,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "5af535902cd7b4ceb0fe2e46805ebcc3"
+    "id": "ead655a47f51117cc6283c88b96c26c4"
   },
   {
     "name": "Handling secrets",
@@ -252,7 +252,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "97a5a053f20396fa99735187a70579df"
+    "id": "d5b69046b7dd1e1866bd008c30676440"
   },
   {
     "name": "Parametric random number",
@@ -280,7 +280,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "70ad49955156cd0c4cc1a4ecc4d9ce4a"
+    "id": "7e1de864c7b274d378194793611fc70a"
   },
   {
     "name": "Levenshtein distance",
@@ -308,7 +308,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "9cfca0efeea62d090e98c876ed1b7f6f"
+    "id": "7c957a1606e26428b4c55f11c47ac174"
   },
   {
     "name": "Connecting to a database",
@@ -336,7 +336,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "55c706e6ac6c6c3a2af0443c5864dc24"
+    "id": "e23ac0b10ed470d34217fece4e198b75"
   },
   {
     "name": "Face detection with Cloudinary",
@@ -368,7 +368,7 @@
       "api_key": "CLOUDINARY_API_KEY",
       "api_secret": "CLOUDINARY_API_SECRET"
     },
-    "id": "d8fe4ba0f3e2ddf5fc195d11b39ca739"
+    "id": "1b122082b45f90901d3e451bb026a5ea"
   },
   {
     "name": "Twitter APIs",
@@ -402,7 +402,7 @@
       "access_token": "TWITTER_ACCESS_TOKEN",
       "access_token_secret": "TWITTER_ACCESS_TOKEN_SECRET"
     },
-    "id": "dab3c294cd6d1faf90f8c8bd32dc0477"
+    "id": "8b113f282660f97bc43933ea262fbb57"
   },
   {
     "name": "Response with custom headers",
@@ -430,7 +430,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "bfaad30414ec406ac0e2141910ed9243"
+    "id": "3d271efe38e793eb096929ea8ff6e4bb"
   },
   {
     "name": "Accessing the request",
@@ -458,7 +458,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "91bcfc8ea0eddb62eb7048569c593ec9"
+    "id": "90f6b5574e558be3e0efe61f10e522c3"
   },
   {
     "name": "Handling multipart/form-data content-type",
@@ -486,7 +486,7 @@
       "parse": false,
       "merge": true
     },
-    "id": "87bd5a488ee74c9a2184ac95860dc336"
+    "id": "485ca6101a6ae76498ca9619459c9fd7"
   },
   {
     "name": "Express",
@@ -505,7 +505,7 @@
       "parse": false,
       "merge": false
     },
-    "id": "37761a8d5b2570026a22b83d69ba27d3"
+    "id": "becf10414c471e5216e6581660096b94"
   },
   {
     "name": "Express with view",
@@ -524,7 +524,7 @@
       "parse": false,
       "merge": false
     },
-    "id": "eb39d051542cf0e3822330d8ae9f9681"
+    "id": "c4cf1947a9ca0fd932ca1c0590acf5bb"
   },
   {
     "name": "Express with mlab",
@@ -549,7 +549,7 @@
       "parse": false,
       "merge": false
     },
-    "id": "02e8365fb3cbe3c2b2e2a3f47c7fa4dc"
+    "id": "e5180e9a982838a774d89e87a1f39cac"
   },
   {
     "name": "Automatically tag new versions",
@@ -574,6 +574,172 @@
     "secrets": {
       "GITHUB_TOKEN": "REPLACE_WITH_GITHUB_TOKEN"
     },
-    "id": "813f5cc88b1b1752a010b70399a30775"
+    "id": "54cf924c35be6445ac43a52148047098"
+  },
+  {
+    "name": "Query a Stamplay Object",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 22,
+    "description": "How to use the Stamplay Node.js SDK to query a Stamplay Object\n",
+    "note": {
+      "title": "instructions",
+      "content": "This template shows how to use the Stamplay Node.js SDK to query a Stamplay Object.\n"
+    },
+    "code": {
+      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n  var query = {\n    YOUR_PROP : 'PROP_VALUE'\n  }\n  stamplay.Object('YOUR_OBJECT_ID').get(query, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n",
+      "apiKey": "STAMPLAY_API_KEY"
+    },
+    "sampleRequest": {
+      "method": "GET"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "6a7939642742892580087f7436f63516"
+  },
+  {
+    "name": "Query a Stamplay Object by _id",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 23,
+    "description": "How to use the Stamplay Node.js SDK to query a Stamplay Object by _id\n",
+    "note": {
+      "title": "instructions",
+      "content": "This template shows how to use the Stamplay Node.js SDK to get a Stamplay Object by _id.\n"
+    },
+    "code": {
+      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  var query = {\n    _id : 'YOUR_INSTANCE_OBJECT_ID'\n  }\n  stamplay.Object('YOUR_OBJECT_ID').get(query, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n"
+    },
+    "secrets": {
+      "apiKey": "STAMPLAY_API_KEY"
+    },
+    "sampleRequest": {
+      "method": "GET"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "9b8a4cecdb5ccb0b11ef287bec351f99"
+  },
+  {
+    "name": "Create a Stamplay Object",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 24,
+    "description": "How to use the Stamplay Node.js SDK to create a Stamplay Object\n",
+    "note": {
+      "title": "instructions",
+      "content": "This template shows how to use the Stamplay Node.js SDK to create a Stamplay Object.\n"
+    },
+    "code": {
+      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n  const data = {\n    YOUR_PROP : 'PROP_VALUE',\n  };\n\n  stamplay.Object('YOUR_OBJECT_ID').save(data, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n"
+    },
+    "secrets": {
+      "apiKey": "STAMPLAY_API_KEY"
+    },
+    "sampleRequest": {
+      "method": "GET"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "fbab1c20bddece1839162115c81573b4"
+  },
+  {
+    "name": "Update an existing Stamplay Object",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 25,
+    "description": "How to use the Stamplay Node.js SDK to update a Stamplay Object\n",
+    "note": {
+      "title": "instructions",
+      "content": "This template shows how to use the Stamplay Node.js SDK to partially/fully update a Stamplay Object.\n"
+    },
+    "code": {
+      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  const _id = 'YOUR_INSTANCE_OBJECT_ID';\n  const data = {\n    YOUR_PROP : 'PROP_VALUE',\n  };\n\n  /**\n   * Use the .update method to PUT the object\n   * Using the PUT method you will need to send the entire object representation\n   */\n  \n  stamplay.Object('YOUR_OBJECT_ID').patch(_id, data, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n"
+    },
+    "secrets": {
+      "apiKey": "STAMPLAY_API_KEY"
+    },
+    "sampleRequest": {
+      "method": "GET"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "1c3d49147f5eeb0592b45ff3ae2bbb07"
+  },
+  {
+    "name": "Delete an existing Stamplay Object",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 26,
+    "description": "How to use the Stamplay Node.js SDK to update a Stamplay Object\n",
+    "note": {
+      "title": "instructions",
+      "content": "This template shows how to use the Stamplay Node.js SDK to delete a Stamplay Object.\n"
+    },
+    "code": {
+      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  const _id = 'INSTANCE_OBJECT_ID';\n\n  stamplay.Object('YOUR_OBJECT_ID').remove(_id, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n"
+    },
+    "secrets": {
+      "apiKey": "STAMPLAY_API_KEY"
+    },
+    "sampleRequest": {
+      "method": "GET"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "9b28bde7c97925f6d1faa766937eb6ca"
+  },
+  {
+    "name": "Retrieve a random object",
+    "type": "sample",
+    "author": {
+      "name": "claudio.petrini",
+      "link": "https://github.com/claudiopetrini"
+    },
+    "order": 27,
+    "description": "How to use the Stamplay Node.js SDK to get a random Stamplay Object\n",
+    "note": {
+      "title": "instructions",
+      "content": "This template shows how to use the Stamplay Node.js SDK to retrieve a random Stamplay Object.\n"
+    },
+    "code": {
+      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  var query = {}\n  stamplay.Object('YOUR_OBJECT_ID').get({}, (err, response) => {\n    if (err) {\n      return cb(err);\n    }\n    var responseObj = response;\n    var totalElements = responseObj.pagination.total_elements;\n\n    var random = parseInt(Math.random() * (totalElements - 1) + 1);\n    stamplay.Object('YOUR_OBJECT_ID').get({\n      page: random,\n      per_page: 1\n    }, (err, res) => {\n      if(err){\n        return cb(err);\n      }\n      cb(null, res);\n    });\n  });\n};\n"
+    },
+    "secrets": {
+      "apiKey": "STAMPLAY_API_KEY"
+    },
+    "sampleRequest": {
+      "method": "GET"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "7fa492841704900157f0861a66d4825d"
   }
 ]

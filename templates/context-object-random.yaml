@@ -1,0 +1,46 @@
+name: Retrieve a random object
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 27
+description: |
+  How to use the Stamplay Node.js SDK to get a random Stamplay Object
+note:
+  title: instructions
+  content: |
+    This template shows how to use the Stamplay Node.js SDK to retrieve a random Stamplay Object.
+code:
+  es6: |
+    const Stamplay = require('stamplay@1.0.8');
+
+    module.exports = function (context, cb) {
+      const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);
+
+      var query = {}
+      stamplay.Object('YOUR_OBJECT_ID').get({}, (err, response) => {
+        if (err) {
+          return cb(err);
+        }
+        var responseObj = response;
+        var totalElements = responseObj.pagination.total_elements;
+
+        var random = parseInt(Math.random() * (totalElements - 1) + 1);
+        stamplay.Object('YOUR_OBJECT_ID').get({
+          page: random,
+          per_page: 1
+        }, (err, res) => {
+          if(err){
+            return cb(err);
+          }
+          cb(null, res);
+        });
+      });
+    };
+secrets : 
+  apiKey : 'STAMPLAY_API_KEY'    
+sampleRequest: 
+  method: 'GET'
+settings:
+  parse: true
+  merge: true

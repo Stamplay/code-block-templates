@@ -1,0 +1,36 @@
+name: Create a Stamplay Object
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 24
+description: |
+  How to use the Stamplay Node.js SDK to create a Stamplay Object
+note:
+  title: instructions
+  content: |
+    This template shows how to use the Stamplay Node.js SDK to create a Stamplay Object.
+code:
+  es6: |
+    const Stamplay = require('stamplay@1.0.8');
+
+    module.exports = function (context, cb) {
+      const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);
+      const data = {
+        YOUR_PROP : 'PROP_VALUE',
+      };
+
+      stamplay.Object('YOUR_OBJECT_ID').save(data, (err, response)=>{
+        if(err){
+          return cb(err);
+        }
+        return cb(null, response);
+      });
+    };
+secrets : 
+  apiKey : 'STAMPLAY_API_KEY'    
+sampleRequest: 
+  method: 'GET'
+settings:
+  parse: true
+  merge: true

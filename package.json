@@ -3,7 +3,9 @@
   "version": "1.0.2",
   "private": false,
   "description": "Code Block templates.",
-  "scripts": {},
+  "scripts": {
+    "start": "grunt dev"
+  },
   "keywords": [
     "stamplay",
     "editor",

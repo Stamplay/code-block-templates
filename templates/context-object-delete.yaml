@@ -1,0 +1,35 @@
+name: Delete an existing Stamplay Object
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 26
+description: |
+  How to use the Stamplay Node.js SDK to update a Stamplay Object
+note:
+  title: instructions
+  content: |
+    This template shows how to use the Stamplay Node.js SDK to delete a Stamplay Object.
+code:
+  es6: |
+    const Stamplay = require('stamplay@1.0.8');
+
+    module.exports = function (context, cb) {
+      const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);
+
+      const _id = 'INSTANCE_OBJECT_ID';
+
+      stamplay.Object('YOUR_OBJECT_ID').remove(_id, (err, response)=>{
+        if(err){
+          return cb(err);
+        }
+        return cb(null, response);
+      });
+    };
+secrets : 
+  apiKey : 'STAMPLAY_API_KEY'    
+sampleRequest: 
+  method: 'GET'
+settings:
+  parse: true
+  merge: true

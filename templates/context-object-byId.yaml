@@ -1,0 +1,36 @@
+name: Query a Stamplay Object by _id
+type: sample
+author: 
+  name: claudio.petrini
+  link: https://github.com/claudiopetrini
+order: 23
+description: |
+  How to use the Stamplay Node.js SDK to query a Stamplay Object by _id
+note:
+  title: instructions
+  content: |
+    This template shows how to use the Stamplay Node.js SDK to get a Stamplay Object by _id.
+code:
+  es6: |
+    const Stamplay = require('stamplay@1.0.8');
+
+    module.exports = function (context, cb) {
+      const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);
+
+      var query = {
+        _id : 'YOUR_INSTANCE_OBJECT_ID'
+      }
+      stamplay.Object('YOUR_OBJECT_ID').get(query, (err, response)=>{
+        if(err){
+          return cb(err);
+        }
+        return cb(null, response);
+      });
+    };
+secrets : 
+  apiKey : 'STAMPLAY_API_KEY'    
+sampleRequest: 
+  method: 'GET'
+settings:
+  parse: true
+  merge: true

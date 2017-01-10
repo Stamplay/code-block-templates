@@ -1,9 +1,11 @@
 {
   "name": "code-block-templates",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "Code Block templates.",
-  "scripts": {},
+  "scripts": {
+    "start": "grunt dev"
+  },
   "keywords": [
     "stamplay",
     "editor",

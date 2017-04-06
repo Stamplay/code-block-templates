@@ -25,7 +25,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "fcf1629b209092d9b3dbcff004703ded"
+    "id": "c847f9035993e2567a80e7a717ede1de"
   },
   {
     "name": "Accessing console",
@@ -53,7 +53,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "13e064248ac65753990bdca48be4c7f0"
+    "id": "cdd91b8e2f891d369064d72f32906be8"
   },
   {
     "name": "Handling errors",
@@ -81,7 +81,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "dc0606f55c1bc794474b535a7e1c2b40"
+    "id": "b23c807ad6772799ff421d5c50e9a42e"
   },
   {
     "name": "Random number",
@@ -109,7 +109,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "88e752b9a641bccbbe183044cf9d8bb2"
+    "id": "cd2a730277d6fa9de22705b8d4b1a47c"
   },
   {
     "name": "Asynchronous code",
@@ -137,7 +137,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "13b7cd6daab93c58ac5a623f74782e38"
+    "id": "feb45863d8adfe08976964d412f9e4f9"
   },
   {
     "name": "Making HTTP requests",
@@ -165,7 +165,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "db9468febc7923d0ddd21561c39894b5"
+    "id": "748488bda03e8ebc80f02895117e316d"
   },
   {
     "name": "Hello name",
@@ -193,7 +193,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "90c3b1d8ed6c3e0b8c21b2428e95c32d"
+    "id": "63bb5d5ffd10c929e41b5d06070b46e1"
   },
   {
     "name": "Accessing request",
@@ -221,7 +221,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "24122a715921bbe7f471070d2074cb06"
+    "id": "61cd693f957133d360f97585c6945287"
   },
   {
     "name": "Handling secrets",
@@ -252,7 +252,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "825db833a1265c94ef492302bffb934c"
+    "id": "01dfc770c04bc5128f0f12c20503fa60"
   },
   {
     "name": "Parametric random number",
@@ -280,7 +280,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "ae559a3f6633425575d1537ffa649b68"
+    "id": "cfbaf660535d24df3424cb4ce8b72421"
   },
   {
     "name": "Levenshtein distance",
@@ -308,7 +308,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "9b34c4f85ba2cd1c89b5456bb34c59bb"
+    "id": "3a088a913942b60b5d5f5d17ff6e0ae9"
   },
   {
     "name": "Connecting to a database",
@@ -336,7 +336,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "0ecd46fb48d148f4fd65ec589b6f6189"
+    "id": "2fe2a9a7656f7eb43e1e9771d44277b8"
   },
   {
     "name": "Face detection with Cloudinary",
@@ -368,7 +368,7 @@
       "api_key": "CLOUDINARY_API_KEY",
       "api_secret": "CLOUDINARY_API_SECRET"
     },
-    "id": "922fef1284dae33880be901a7e2faeae"
+    "id": "17e449b360f9207428ccea3acbb84e44"
   },
   {
     "name": "Twitter APIs",
@@ -402,7 +402,7 @@
       "access_token": "TWITTER_ACCESS_TOKEN",
       "access_token_secret": "TWITTER_ACCESS_TOKEN_SECRET"
     },
-    "id": "de0c4d5edab346bbd07d242c3f7368d5"
+    "id": "e754aa6f3beeeba7c2793551b6ebfcbc"
   },
   {
     "name": "Response with custom headers",
@@ -430,7 +430,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "d3393bfa0c2a7f90f6e7880d4590f02f"
+    "id": "93bd65ce48f24e9e01fa39b95e850956"
   },
   {
     "name": "Accessing the request",
@@ -458,7 +458,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "1fddb6582b9a36b0533abf50280548ed"
+    "id": "363e66b97fe0e59c45462e49996c6aef"
   },
   {
     "name": "Handling multipart/form-data content-type",
@@ -486,7 +486,7 @@
       "parse": false,
       "merge": true
     },
-    "id": "cf66aac2253474829381775f881a77bd"
+    "id": "10fe2dccdcd1a20af9d0583cfbe3cea7"
   },
   {
     "name": "Express",
@@ -505,7 +505,7 @@
       "parse": false,
       "merge": false
     },
-    "id": "9536585f09351ec950389001595859a3"
+    "id": "9219af241b7c7b16047b95e64d27c6d8"
   },
   {
     "name": "Express with view",
@@ -524,7 +524,7 @@
       "parse": false,
       "merge": false
     },
-    "id": "7e7585869cb4b675d51ff9ab4ce1ccbe"
+    "id": "ce809afe3b2aec33a36313140e46bb1c"
   },
   {
     "name": "Express with mlab",
@@ -549,7 +549,7 @@
       "parse": false,
       "merge": false
     },
-    "id": "2d087b9dbe777957f367a5eb746eb72c"
+    "id": "a71ff5d836aa92225ca4a0ebecb23a10"
   },
   {
     "name": "Automatically tag new versions",
@@ -574,7 +574,7 @@
     "secrets": {
       "GITHUB_TOKEN": "REPLACE_WITH_GITHUB_TOKEN"
     },
-    "id": "55542b8d24807f3860a228e49366c078"
+    "id": "660d057de0e5ba1b7a5472a0eb744360"
   },
   {
     "name": "Query a Stamplay Object",
@@ -600,7 +600,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "a22af553bd4daace76bef30a704c42ac"
+    "id": "0638ebad748bb01d1e84322b34eb3f8c"
   },
   {
     "name": "Query a Stamplay Object by _id",
@@ -628,7 +628,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "c027e0845a4e2a902d116fbd7f2f8130"
+    "id": "fb77b7ffbb692dcf778f526d434d4f94"
   },
   {
     "name": "Create a Stamplay Object",
@@ -656,7 +656,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "0313bd662a36c46fda325b2d81c7e4dd"
+    "id": "78407267886f3f2b4df4def460056407"
   },
   {
     "name": "Update an existing Stamplay Object",
@@ -684,7 +684,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "cc7f9d0b4ebc77ca89e8b09bbb1f786b"
+    "id": "d839650479a1bd8345cb4e856f558dcf"
   },
   {
     "name": "Delete an existing Stamplay Object",
@@ -712,7 +712,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "8dd74f97a03716d79a1390a9acc0d0cd"
+    "id": "e68f1f46695cdcdee00992ebd95930cd"
   },
   {
     "name": "Retrieve a random object",
@@ -740,7 +740,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "e0587f466a88dfa6e821bb3f2bc2c94d"
+    "id": "e01671a6d130c7fa7c4aff1314705d41"
   },
   {
     "name": "Upload a file to S3",
@@ -772,6 +772,38 @@
       "parse": true,
       "merge": true
     },
-    "id": "5a92cd0f06b358be7ae49d7bdb5fd8f7"
+    "id": "cf0fde011b13e0df3981275ed5e173a9"
+  },
+  {
+    "name": "IBM Watson Speech to Text",
+    "type": "sample",
+    "author": {
+      "name": "giuliano84",
+      "link": "https://github.com/giuliano84"
+    },
+    "order": 29,
+    "description": "Use IBM Watson Speech to Text service to recognize the text from a .wav file.\n",
+    "note": {
+      "title": "instructions",
+      "content": "This example takes as an input a URL to a .wav audio file and pass it to IBM Watson Speech to Text to recognize the text.\n"
+    },
+    "code": {
+      "es6": "const request = require('request@2.67.0');\nconst SpeechToTextV1 = require('watson-developer-cloud/speech-to-text/v1');\n\nmodule.exports = function (context, cb) {\n\n  //a public fileUrl passed as a parameter to the Code Block \n  //e.g https://app.box.com/shared/static/8kt9roithydgnz80bonk9ea9oh7n2hfm.wav\n  const fileUrl = context.data.fileUrl;\n  \n  //Initialize Watson SpeechToText\n  const speech_to_text = new SpeechToTextV1({\n    username: context.secrets.watson_username,\n    password: context.secrets.watson_password\n  });\n  \n  //prepare the request content for Watson \n  const params = {\n    audio: request(fileUrl),\n    content_type: 'audio/wav' //'audio/flac', 'audio/l16; rate=44100', 'audio/ogg;codecs=opus'\n  };\n  \n  //pass the audio file to Watson\n  return speech_to_text.recognize(params, function(err, res) {\n    if (err) {\n      return cb(err)    \n    }\n    return cb(null, res)    \n  });\n};\n"
+    },
+    "sampleRequest": {
+      "method": "POST",
+      "type": "json",
+      "mode": "body",
+      "data": "{\"fileUrl\" : \"https://app.box.com/shared/static/8kt9roithydgnz80bonk9ea9oh7n2hfm.wav\"}\n"
+    },
+    "secrets": {
+      "watson_username": "IBM_Speech_to_text_username",
+      "watson_password": "IBM_Speech_to_text_password"
+    },
+    "settings": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "60129a28f82ca2dc52518681cf8ca011"
   }
 ]

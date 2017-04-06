@@ -12,34 +12,34 @@ note:
     This example takes as an input a URL to a .wav audio file and pass it to IBM Watson Speech to Text to recognize the text.
 code:
   es6: |
+    const request = require('request@2.67.0');
+    const SpeechToTextV1 = require('watson-developer-cloud/speech-to-text/v1');
+
     module.exports = function (context, cb) {
   
       //a public fileUrl passed as a parameter to the Code Block 
       //e.g https://app.box.com/shared/static/8kt9roithydgnz80bonk9ea9oh7n2hfm.wav
-      var fileUrl = context.data.fileUrl;
-      var SpeechToTextV1 = require('watson-developer-cloud/speech-to-text/v1');
-      var request = require('request');
-
+      const fileUrl = context.data.fileUrl;
+      
       //Initialize Watson SpeechToText
-      var speech_to_text = new SpeechToTextV1({
+      const speech_to_text = new SpeechToTextV1({
         username: context.secrets.watson_username,
         password: context.secrets.watson_password
       });
       
       //prepare the request content for Watson 
-      var params = {
+      const params = {
         audio: request(fileUrl),
         content_type: 'audio/wav' //'audio/flac', 'audio/l16; rate=44100', 'audio/ogg;codecs=opus'
       };
       
       //pass the audio file to Watson
-      speech_to_text.recognize(params, function(err, res) {
+      return speech_to_text.recognize(params, function(err, res) {
         if (err) {
           return cb(err)    
         }
         return cb(null, res)    
       });
-      
     };
 sampleRequest: 
   method: 'POST'

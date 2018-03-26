@@ -1,21 +1,23 @@
 name: Express with mlab
 type: sample
-author: 
+author:
   name: verlic
   link: https://github.com/Verlic
 order: 20
 description: |
   A sample about how to use Express with mlab from Code Blocks.
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     You must set a valid <code>MONGO_URL</code> Code Block secret for it to work.
     ie. <code>mongodb://user:pwd@ds012345.mlab.com:56789/dbname</code>
     <br/>
     <br/>
     More info about <a href="http://docs.mlab.com" target="_blank">MLab</a>
-code:
-  es6: |
+  wt-node-dependencies: |
+    { "express": "4.16.3", "webtask-tools":"3.2.0", "body-parser":"1.18.2", "mongodb":"3.0.5"}
+code: |
     const bodyParser = require('body-parser');
     const express = require('express');
     const Webtask = require('webtask-tools');
@@ -57,6 +59,6 @@ code:
     module.exports = Webtask.fromExpress(server);
 secrets:
   MONGO_URL : 'REPLACE_WITH_MONGO_URL'
-settings:
+body:
   parse: false
   merge: false

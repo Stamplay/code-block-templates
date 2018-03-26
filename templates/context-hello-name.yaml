@@ -1,27 +1,27 @@
 name: Hello name
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 7
 description: |
   How to access to request body or query parameter.
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.
-code:
-  es6: |
+code: |
     module.exports = function (context, callback) {
       const name = context.data.name || "World";
       return callback(null, "Hello " + name);
     };
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     { "name" : "there"}
-settings:
+body:
   parse: true
   merge: true

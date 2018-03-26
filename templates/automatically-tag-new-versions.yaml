@@ -1,14 +1,12 @@
 name: Automatically tag new versions
-author: 
+author:
   name: ggoodman
   link: https://github.com/ggoodman
 order: 21
-type: webhook
-description: |
-  A Code Block that can be used as a Github webhook to automatically tag new versions based on changes to the file package.json.
-note:
-  title: Instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     <ul>
       <li>- Create a Github API token with <code>repo</code> access from: <code>https://github.com/settings/tokens/new.</code></li>
       <li>- Go to <code>https://github.com/:user/:repository/settings/hooks/new</code>.</li>
@@ -16,8 +14,12 @@ note:
       <li>- Click on <code>Add Webhook</code>.</li>
     </ul> <br/>
     <p>Note: Requires a secret called <code>GITHUB_TOKEN</code> containing your GitHub access token.</p>
-code:
-  es6: |
+  wt-node-dependencies: |
+    { "bluebird": "3.5.1", "request": "2.85.0", "lodash": "4.17.5"}
+type: webhook
+description: |
+  A Code Block that can be used as a Github webhook to automatically tag new versions based on changes to the file package.json.
+code: |
     var Bluebird = require('bluebird');
     var Request = Bluebird.promisifyAll(require('request'));
     var _       = require('lodash');
@@ -150,9 +152,8 @@ code:
           });
       }
     };
-settings:
-  parse: true
-  merge: true
 secrets:
   GITHUB_TOKEN : REPLACE_WITH_GITHUB_TOKEN
-
+body:
+  parse: true
+  merge: true

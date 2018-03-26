@@ -1,14 +1,13 @@
 name: Connecting to a database
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 12
-description: |
-  How to connect to an external Redis database using a Code Block.
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     One of the coolest thing you can do with a server is connecting at your own database, and you can do it with CodeBlocks too!
     You can look for the available Node.js modules that you can use here
     Mongo
@@ -19,8 +18,11 @@ note:
     In this example we will connect to an external Redis database the url, the port and the password are encrypted in order to not leak any kind of private information.
 
     After the connection and the authentication we're saving a value, retrieving it and returning to the client, few lines of code that saved us from creating a Node.js server and managing during all its lifetime.
-code:
-  es6: |
+  wt-node-dependencies: |
+   { "redis": "2.8.0"}
+description: |
+  How to connect to an external Redis database using a Code Block.
+code: |
     module.exports = function (context, cb) {
       var redis = require('redis');
       var client = redis.createClient(context.data.port, context.data.url, {});
@@ -33,12 +35,12 @@ code:
         });
       });
     };
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     {"port" : 6379, "url" : "url"}
-settings:
+body:
   parse: true
   merge: true

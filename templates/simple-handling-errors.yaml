@@ -1,29 +1,29 @@
 name: Handling errors
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 3
 description: |
   How to handle errors in Code Blocks.
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     Sometimes you just want to return an error, other time you just want to handle it in a nicer way.
     The callback function can be invoked with a string or an object that has the property `message` in it in order to make the CodeBlock return with an error.
-code:
-  es6: |
+code: |
     module.exports = function (cb) {
       return cb({
         message: 'Sending error in obj'
       });
     };
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     {}
-settings:
+body:
   parse: true
   merge: true

@@ -1,30 +1,30 @@
 name: Asynchronous code
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 5
 description: |
   Asynchronous code execution in Code Blocks.
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     Since you have a callback you can execute any kind of asynchronous code you like.
     Here you can see that we're just using the setTimeout function but you can connect to a database (but make sure to use secrets!), execute a query and then return the results of the query.
     Please note that a CodeBlock execution can last at maximum 60 seconds.
-code:
-  es6: |
+code: |
     module.exports = function (cb) {
       return setTimeout(function () {
         return cb(null, 'Hi');
       }, 1000);
     };
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     {}
-settings:
+body:
   parse: true
   merge: true

@@ -8,24 +8,23 @@
     },
     "order": 1,
     "description": "Hello world.\n",
-    "note": {
-      "title": "instructions",
-      "content": "As you can see the function we're defining takes a callback \nfunction that must be invoked when the code is completed.\nSince this code will run in a Node.js environment the callback\nwill take as a first argument an error and as a second argument \nthe result which can be a string, a number, or an object that will \nbe stringified as JSON.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "As you can see the function we're defining takes a callback\nfunction that must be invoked when the code is completed.\nSince this code will run in a Node.js environment the callback\nwill take as a first argument an error and as a second argument\nthe result which can be a string, a number, or an object that will\nbe stringified as JSON.\n"
     },
-    "code": {
-      "es6": "module.exports = function (cb) {\n  /**\n  *    \n  * if you want to send a json instead\n  *  return cb(null,{\n  *    hello: 'world'\n  *  });\n  */ \n  return cb(null, 'Hello world!');\n};\n"
-    },
+    "code": "module.exports = function (cb) {\n  /**\n  *\n  * if you want to send a json instead\n  *  return cb(null,{\n  *    hello: 'world'\n  *  });\n  */\n  return cb(null, 'Hello world!');\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "c847f9035993e2567a80e7a717ede1de"
+    "id": "7c0f7013f4ab762b7e932054fdc2c33b"
   },
   {
     "name": "Accessing console",
@@ -36,24 +35,23 @@
     },
     "order": 2,
     "description": "How to see real time console.logs.\n",
-    "note": {
-      "title": "instructions",
-      "content": "For debugging purposes can be useful have a look at the variable\nvalues by using console.log. You can see real time logs by enabling\nthe console from the Editor.\n\nAfter each Code Block execution you can see the request and the\nresponse body in the Stamplay Editor from the Logs view.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "For debugging purposes can be useful have a look at the variable\nvalues by using console.log. You can see real time logs by enabling\nthe console from the Editor.\n\nAfter each Code Block execution you can see the request and the\nresponse body in the Stamplay Editor from the Logs view.\n"
     },
-    "code": {
-      "es6": "module.exports = function (cb) {\n  /**\n   * You can see the console.log output in the Code Block log from the real time console\n   */\n  console.log('Hello world in console');\n  return cb(null, 'Hello world, check the logs section in the Editor!');\n};\n"
-    },
+    "code": "module.exports = function (cb) {\n  /**\n   * You can see the console.log output in the Code Block log from the real time console\n   */\n  console.log('Hello world in console');\n  return cb(null, 'Hello world, check the logs section in the Editor!');\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "cdd91b8e2f891d369064d72f32906be8"
+    "id": "6cd7b9c8fc0f4fb9a3d8643615e759c1"
   },
   {
     "name": "Handling errors",
@@ -64,24 +62,23 @@
     },
     "order": 3,
     "description": "How to handle errors in Code Blocks.\n",
-    "note": {
-      "title": "instructions",
-      "content": "Sometimes you just want to return an error, other time you just want to handle it in a nicer way.\nThe callback function can be invoked with a string or an object that has the property `message` in it in order to make the CodeBlock return with an error.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "Sometimes you just want to return an error, other time you just want to handle it in a nicer way.\nThe callback function can be invoked with a string or an object that has the property `message` in it in order to make the CodeBlock return with an error.\n"
     },
-    "code": {
-      "es6": "module.exports = function (cb) {\n  return cb({\n    message: 'Sending error in obj'\n  });\n};\n"
-    },
+    "code": "module.exports = function (cb) {\n  return cb({\n    message: 'Sending error in obj'\n  });\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "b23c807ad6772799ff421d5c50e9a42e"
+    "id": "52dd39bd097b0b781a30ba7b01d1e21d"
   },
   {
     "name": "Random number",
@@ -92,24 +89,23 @@
     },
     "order": 4,
     "description": "How to generate a random number using a Code Block.\n",
-    "note": {
-      "title": "instructions",
-      "content": "In this example the CodeBlock will return a random number between 1 and 100.\nWe'll extend later this feature by making the minimum and maximum value parametric by query parameter or via query params.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "How to generate a random number using a Code Block.\n"
     },
-    "code": {
-      "es6": "module.exports = function (cb) {\n  const min = 1;\n  const max = 100;\n  const random = Math.floor((Math.random() * max) + min);\n \n  return cb(null, {\n    random,\n  });\n};\n"
-    },
+    "code": "module.exports = function (cb) {\n  const min = 1;\n  const max = 100;\n  const random = Math.floor((Math.random() * max) + min);\n\n  return cb(null, {\n    random,\n  });\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "cd2a730277d6fa9de22705b8d4b1a47c"
+    "id": "2359347e1d82e522e60535a00eb76adb"
   },
   {
     "name": "Asynchronous code",
@@ -120,24 +116,23 @@
     },
     "order": 5,
     "description": "Asynchronous code execution in Code Blocks.\n",
-    "note": {
-      "title": "instructions",
-      "content": "Since you have a callback you can execute any kind of asynchronous code you like.\nHere you can see that we're just using the setTimeout function but you can connect to a database (but make sure to use secrets!), execute a query and then return the results of the query.\nPlease note that a CodeBlock execution can last at maximum 60 seconds.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "Since you have a callback you can execute any kind of asynchronous code you like.\nHere you can see that we're just using the setTimeout function but you can connect to a database (but make sure to use secrets!), execute a query and then return the results of the query.\nPlease note that a CodeBlock execution can last at maximum 60 seconds.\n"
     },
-    "code": {
-      "es6": "module.exports = function (cb) {\n  return setTimeout(function () {\n    return cb(null, 'Hi');\n  }, 1000);\n};\n"
-    },
+    "code": "module.exports = function (cb) {\n  return setTimeout(function () {\n    return cb(null, 'Hi');\n  }, 1000);\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "feb45863d8adfe08976964d412f9e4f9"
+    "id": "5c84953c2431ae3db144666f9448fde7"
   },
   {
     "name": "Making HTTP requests",
@@ -147,25 +142,25 @@
       "link": "https://github.com/claudiopetrini"
     },
     "order": 6,
-    "description": "How to make HTTP request in Code Blocks .\n",
-    "note": {
-      "title": "instructions",
-      "content": "Since you're executing Node.js code you are able to do HTTP[S] requests from your CodeBlock in a really easy way.\nTo make your life easier you can use the request module and many others.\n"
+    "description": "How to make HTTP request in Code Blocks.\n",
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "Since you're executing Node.js code you are able to do HTTP[S] requests from your CodeBlock in a really easy way.\nTo make your life easier you can use the request module and many others.\n",
+      "wt-node-dependencies": "{ \"request\":\"2.85.0\"}\n"
     },
-    "code": {
-      "es6": "const request = require('request@2.67.0');\nmodule.exports = function (cb) {\n  return request('http://google.com', function (err, response, body) {\n    return cb(err, response.statusCode);\n  });\n};\n"
-    },
+    "code": "const request = require('request');\nmodule.exports = function (cb) {\n  return request('http://google.com', function (err, response, body) {\n    return cb(err, response.statusCode);\n  });\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "748488bda03e8ebc80f02895117e316d"
+    "id": "76130910971db7cb82996b4dbc5c7482"
   },
   {
     "name": "Hello name",
@@ -176,24 +171,23 @@
     },
     "order": 7,
     "description": "How to access to request body or query parameter.\n",
-    "note": {
-      "title": "instructions",
-      "content": "In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.\n"
     },
-    "code": {
-      "es6": "module.exports = function (context, callback) {\n  const name = context.data.name || \"World\";\n  return callback(null, \"Hello \" + name);\n};\n"
-    },
+    "code": "module.exports = function (context, callback) {\n  const name = context.data.name || \"World\";\n  return callback(null, \"Hello \" + name);\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{ \"name\" : \"there\"}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "63bb5d5ffd10c929e41b5d06070b46e1"
+    "id": "671b1629c64e6452c1d82c74399c5b80"
   },
   {
     "name": "Accessing request",
@@ -203,25 +197,25 @@
       "link": "https://github.com/claudiopetrini"
     },
     "order": 8,
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.\nThis example is showing you a CodeBlock that is getting the url parameter in query string is trying to resolve its IP address.\nIf an error occurs the callback will be invoked with the error and it will be back to the client, otherwise a 200 response will be sent.\nIf you want to distinct query parameters from the body parameters you can access the request parameters as follows\nquery parameters in context.query\nbody parameters in context.body\nsecrets in context.secrets\ncontext.data is just a convenient way to merge all the request parameters in an accessible key.\n",
+      "wt-node-dependencies": "{ \"dns\": \"0.2.2\"}\n"
+    },
     "description": "How to access to request body or query parameter.\n",
-    "note": {
-      "title": "instructions",
-      "content": "In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.\nThis example is showing you a CodeBlock that is getting the url parameter in query string is trying to resolve its IP address. \nIf an error occurs the callback will be invoked with the error and it will be back to the client, otherwise a 200 response will be sent.\nIf you want to distinct query parameters from the body parameters you can access the request parameters as follows\nquery parameters in context.query\nbody parameters in context.body\nsecrets in context.secrets\ncontext.data is just a convenient way to merge all the request parameters in an accessible key.\n"
-    },
-    "code": {
-      "es6": "const dns = require('dns');\nmodule.exports = function (context, callback) {\n  return dns.resolve(context.query.url, callback);\n};\n"
-    },
+    "code": "const dns = require('dns');\nmodule.exports = function (context, callback) {\n  return dns.resolve(context.query.url, callback);\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{ \"url\" : \"google.com\"}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "61cd693f957133d360f97585c6945287"
+    "id": "a31e8e2b8db79921ccd9bbdacf71aebd"
   },
   {
     "name": "Handling secrets",
@@ -232,13 +226,13 @@
     },
     "order": 9,
     "description": "How to access secrets in Code Blocks.\n",
-    "note": {
-      "title": "instructions",
-      "content": "Since the server side of an application is the one that keeps passwords, tokens and connections string the CodeBlocks allows you to store this kind of informations securely by using the secret area in the Editor.\nAll the secrets stored in that area are saved encrypted and you can use it in your Codeblock by accessing to context.secrets.yourKey. Please avoid to return these values to the client.\nIn this example we're making an HTTP request with the authorization header using a password stored securely in the key named secretKey.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "Since the server side of an application is the one that keeps passwords, tokens and connections string the CodeBlocks allows you to store this kind of informations securely by using the secret area in the Editor.\nAll the secrets stored in that area are saved encrypted and you can use it in your Codeblock by accessing to context.secrets.yourKey. Please avoid to return these values to the client.\nIn this example we're making an HTTP request with the authorization header using a password stored securely in the key named secretKey.\n",
+      "wt-node-dependencies": "{ \"request\": \"2.85.0\"}\n"
     },
-    "code": {
-      "es6": "const request = require('request');\nconst url = 'https://codeblocks.stamplayapp.com/api/webhook/v1/get/catch';\n\nmodule.exports = function (context, cb) {\n  const password = context.secrets.secretKey;\n  return request(url, cb)\n    .auth('username', password);\n};\n"
-    },
+    "code": "const request = require('request');\nconst url = 'https://codeblocks.stamplayapp.com/api/webhook/v1/get/catch';\n\nmodule.exports = function (context, cb) {\n  const password = context.secrets.secretKey;\n  return request(url, cb)\n    .auth('username', password);\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
@@ -248,11 +242,11 @@
     "secrets": {
       "secretKey": "secret"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "01dfc770c04bc5128f0f12c20503fa60"
+    "id": "1285c9d69a3dcab151b7c027fd72420f"
   },
   {
     "name": "Parametric random number",
@@ -263,24 +257,23 @@
     },
     "order": 10,
     "description": "How to access to request body or query parameter.\n",
-    "note": {
-      "title": "instructions",
-      "content": "In this example the CodeBlock will return a random number between 1 and 100.\nWe'll extend later this feature by making the minimum and maximum value parametric by query parameter or via query params.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "In this example the CodeBlock will return a random number between 1 and 100.\nWe'll extend later this feature by making the minimum and maximum value parametric by query parameter or via query params.\n"
     },
-    "code": {
-      "es6": "const min = 1;\nconst max = 100;\n\nmodule.exports = function (cb) {\n  const random = Math.floor((Math.random() * max) + min);\n  return cb(null, {\n    random,\n  });\n};\n"
-    },
+    "code": "const min = 1;\nconst max = 100;\n\nmodule.exports = function (cb) {\n  const random = Math.floor((Math.random() * max) + min);\n  return cb(null, {\n    random,\n  });\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "cfbaf660535d24df3424cb4ce8b72421"
+    "id": "418b82b32620c1e567cb3c8699d97955"
   },
   {
     "name": "Levenshtein distance",
@@ -290,25 +283,25 @@
       "link": "https://github.com/claudiopetrini"
     },
     "order": 11,
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "This example will allow you to create an API endpoint for your application that will be able to compute the Levenshtein distance between two given strings.\nWe're using the module fast-levenshtein which is available in the CodeBlocks, the input is allowed from both request body and query parameters.\n",
+      "wt-node-dependencies": "{ \"fast-levenshtein\": \"2.0.6\"}\n"
+    },
     "description": "How to compute Levenshtein distance across two strings using the fast-levenshtein distance.\n",
-    "note": {
-      "title": "instructions",
-      "content": "This example will allow you to create an API endpoint for your application that will be able to compute the Levenshtein distance between two given strings.\nWe're using the module fast-levenshtein which is available in the CodeBlocks, the input is allowed from both request body and query parameters.\n"
-    },
-    "code": {
-      "es6": "const levenshtein = require('fast-levenshtein');\n\nmodule.exports = function (context, cb) {\n  return levenshtein.getAsync(context.data.first, context.data.second, (err, result) => {\n    return cb(err , {distance : result});\n  });\n};\n"
-    },
+    "code": "const levenshtein = require('fast-levenshtein');\n\nmodule.exports = function (context, cb) {\n  return levenshtein.getAsync(context.data.first, context.data.second, (err, result) => {\n    return cb(err , {distance : result});\n  });\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{\"first\" : \"test\", \"second\" : \"tent\"}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "3a088a913942b60b5d5f5d17ff6e0ae9"
+    "id": "1e0c40ccc163e441ae30d5e4dbe1a84d"
   },
   {
     "name": "Connecting to a database",
@@ -318,25 +311,25 @@
       "link": "https://github.com/claudiopetrini"
     },
     "order": 12,
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "One of the coolest thing you can do with a server is connecting at your own database, and you can do it with CodeBlocks too!\nYou can look for the available Node.js modules that you can use here\nMongo\nRedis\nMySql\nApache Cassandra\nare only an example of what we can connect to.\nIn this example we will connect to an external Redis database the url, the port and the password are encrypted in order to not leak any kind of private information.\n\nAfter the connection and the authentication we're saving a value, retrieving it and returning to the client, few lines of code that saved us from creating a Node.js server and managing during all its lifetime.\n",
+      "wt-node-dependencies": "{ \"redis\": \"2.8.0\"}\n"
+    },
     "description": "How to connect to an external Redis database using a Code Block.\n",
-    "note": {
-      "title": "instructions",
-      "content": "One of the coolest thing you can do with a server is connecting at your own database, and you can do it with CodeBlocks too!\nYou can look for the available Node.js modules that you can use here\nMongo\nRedis\nMySql\nApache Cassandra\nare only an example of what we can connect to.\nIn this example we will connect to an external Redis database the url, the port and the password are encrypted in order to not leak any kind of private information.\n\nAfter the connection and the authentication we're saving a value, retrieving it and returning to the client, few lines of code that saved us from creating a Node.js server and managing during all its lifetime.\n"
-    },
-    "code": {
-      "es6": "module.exports = function (context, cb) {\n  var redis = require('redis');\n  var client = redis.createClient(context.data.port, context.data.url, {});\n  client.auth(context.data.pwd, function () {\n    client.set(\"stringkey\", \"string val\");\n    client.get(\"stringkey\", function (err, reply) {\n      // reply is null when the key is missing\n      console.log(reply);\n      cb(null, reply);\n    });\n  });\n};\n"
-    },
+    "code": "module.exports = function (context, cb) {\n  var redis = require('redis');\n  var client = redis.createClient(context.data.port, context.data.url, {});\n  client.auth(context.data.pwd, function () {\n    client.set(\"stringkey\", \"string val\");\n    client.get(\"stringkey\", function (err, reply) {\n      // reply is null when the key is missing\n      console.log(reply);\n      cb(null, reply);\n    });\n  });\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{\"port\" : 6379, \"url\" : \"url\"}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "2fe2a9a7656f7eb43e1e9771d44277b8"
+    "id": "074927a209c1c0c604344c8872dd63aa"
   },
   {
     "name": "Face detection with Cloudinary",
@@ -347,28 +340,28 @@
     },
     "order": 13,
     "description": "Face detection made easy using Cloudinary service and node module.\n",
-    "note": {
-      "title": "instructions",
-      "content": "Our available modules include among third party services Cloudinary, an image and video managment on the cloud.\nHere is an example of how to use it for uploading an image on their service and request a face detection.\nAfter requiring and configuring the library using the secrets area in order to save the key and the secret, \nwe're uploading the image from an url and requesting the face detection feature.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "Our available modules include among third party services Cloudinary, an image and video managment on the cloud.\nHere is an example of how to use it for uploading an image on their service and request a face detection.\nAfter requiring and configuring the library using the secrets area in order to save the key and the secret,\nwe're uploading the image from an url and requesting the face detection feature.\n",
+      "wt-node-dependencies": "{ \"cloudinary\": \"1.11.0\"}\n"
     },
-    "code": {
-      "es6": "const cloudinary = require('cloudinary');\nconst options = {\n  public_id: \"eager_sample\",\n  eager: {\n    gravity: \"face\",\n    width: 200,\n    height: 200,\n    crop: 'thumb'\n  }\n}\n\nmodule.exports = function (context, cb) {\n  cloudinary.config({\n    cloud_name: context.data.cloud_name,\n    api_key: context.data.api_key,\n    api_secret: context.data.api_secret,\n    secure: true\n  });\n\n  cloudinary.uploader.upload(\n    context.data.url,\n    function (result) {\n      return cb(null, result);\n    }, options);\n};\n"
-    },
+    "code": "const cloudinary = require('cloudinary');\nconst options = {\n  public_id: \"eager_sample\",\n  eager: {\n    gravity: \"face\",\n    width: 200,\n    height: 200,\n    crop: 'thumb'\n  }\n}\n\nmodule.exports = function (context, cb) {\n  cloudinary.config({\n    cloud_name: context.data.cloud_name,\n    api_key: context.data.api_key,\n    api_secret: context.data.api_secret,\n    secure: true\n  });\n\n  cloudinary.uploader.upload(\n    context.data.url,\n    function (result) {\n      return cb(null, result);\n    }, options);\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{\"url\" : \"https://res.cloudinary.com/demo/image/upload/butterfly.jpg\"}\n"
     },
-    "settings": {
-      "parse": true,
-      "merge": true
-    },
     "secrets": {
       "api_key": "CLOUDINARY_API_KEY",
       "api_secret": "CLOUDINARY_API_SECRET"
     },
-    "id": "17e449b360f9207428ccea3acbb84e44"
+    "body": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "e5f07b47856cbe80becb53fe300ecce9"
   },
   {
     "name": "Twitter APIs",
@@ -379,20 +372,20 @@
     },
     "order": 14,
     "description": "Retrieve all the follower of a specified Twitter username.\n",
-    "note": {
-      "title": "instructions",
-      "content": "In this example we're using the twit module in order to use the Twitter APIs.\n After configuring the library saving all the Twitter authentication tokens the as secrets, we're first asking all the ids of the Stamplay's Twitter account and then we're using async module in order to process them and retrieve information for each one of them.\n Please note that due to Twitter's API limit requests, this script may not work properly with accounts that has an high number of followers.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "In this example we're using the twit module in order to use the Twitter APIs.\nAfter configuring the library saving all the Twitter authentication tokens the as secrets, we're first asking all the ids of the Stamplay's Twitter account and then we're using async module in order to process them and retrieve information for each one of them.\nPlease note that due to Twitter's API limit requests, this script may not work properly with accounts that has an high number of followers.\n",
+      "wt-node-dependencies": "{ \"twit\": \"2.2.9\", \"async\":\"2.6.0\"}\n"
     },
-    "code": {
-      "es6": "const Twit = require('twit'); \nconst async = require('async'); \n\nmodule.exports = function (context, cb) { \n  var T = new Twit({ \n    consumer_key: context.secrets.consumer_key,\n    consumer_secret: context.secrets.consumer_secret,\n    access_token: context.secrets.access_token,\n    access_token_secret: context.secrets.access_token_secret \n  }); \n  var finalData = []; \n  var eachFn = function (id, eachCb) { \n    var url = 'users/show'; \n    T.get(url, { id: id }, function (err, data, response) { \n      if (err) { eachCb(err); } else { \n        finalData.push(data); eachCb(); \n      } }); \n  }; \n  var finalFn = function (err) { \n    cb(err, finalData); \n  }; \n  T.get('followers/ids', { \n    screen_name: context.data.profile || 'stamplay' \n  }, function (err, data, response) { \n    if(data && data.ids && data.ids[0]){\n      var one = [data.ids[0]];\n      async.eachSeries(one, eachFn, finalFn); \n    }else{\n      callback('No follower found');   \n    }\n  });\n} \n"
-    },
+    "code": "const Twit = require('twit');\nconst async = require('async');\n\nmodule.exports = function (context, cb) {\n  var T = new Twit({\n    consumer_key: context.secrets.consumer_key,\n    consumer_secret: context.secrets.consumer_secret,\n    access_token: context.secrets.access_token,\n    access_token_secret: context.secrets.access_token_secret\n  });\n  var finalData = [];\n  var eachFn = function (id, eachCb) {\n    var url = 'users/show';\n    T.get(url, { id: id }, function (err, data, response) {\n      if (err) { eachCb(err); } else {\n        finalData.push(data); eachCb();\n      } });\n  };\n  var finalFn = function (err) {\n    cb(err, finalData);\n  };\n  T.get('followers/ids', {\n    screen_name: context.data.profile || 'stamplay'\n  }, function (err, data, response) {\n    if(data && data.ids && data.ids[0]){\n      var one = [data.ids[0]];\n      async.eachSeries(one, eachFn, finalFn);\n    }else{\n      callback('No follower found');\n    }\n  });\n}\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{\"profile\" : \"stamplay\"}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
@@ -402,7 +395,7 @@
       "access_token": "TWITTER_ACCESS_TOKEN",
       "access_token_secret": "TWITTER_ACCESS_TOKEN_SECRET"
     },
-    "id": "e754aa6f3beeeba7c2793551b6ebfcbc"
+    "id": "6c81d00a08e2f367ddea496d362fcf0f"
   },
   {
     "name": "Response with custom headers",
@@ -413,24 +406,23 @@
     },
     "order": 15,
     "description": "How to send custom response headers.\n",
-    "note": {
-      "title": "instructions",
-      "content": "We can easily add some custom headers to the response since that with full control we can control everything.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "We can easily add some custom headers to the response since that with full control we can control everything.\n"
     },
-    "code": {
-      "es6": "module.exports = function(context, req, res) {\n  res.setHeader('x-custom-header', 'custom!');\n  res.writeHead(200, {'Content-Type': 'application/json'});\n  var result = {\n    hello : 'world'\n  };\n  res.end(JSON.stringify(result));\n};\n"
-    },
+    "code": "module.exports = function(context, req, res) {\n  res.setHeader('x-custom-header', 'custom!');\n  res.writeHead(200, {'Content-Type': 'application/json'});\n  var result = {\n    hello : 'world'\n  };\n  res.end(JSON.stringify(result));\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "93bd65ce48f24e9e01fa39b95e850956"
+    "id": "a600c56c36a85795733b32583b4d7776"
   },
   {
     "name": "Accessing the request",
@@ -441,24 +433,23 @@
     },
     "order": 16,
     "description": "How to access the raw request.\n",
-    "note": {
-      "title": "instructions",
-      "content": "In order to have a full control of the CodeBlock we need to use a third, different function signature that takes three arguments context,req and res.\nIn this example we'll send a json in the response but since now we've got control full control of it we'll need to set the correct Content-Type manually.\nThis kind of control open to developers infinite use cases that process the request in different and unusual ways.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "In order to have a full control of the CodeBlock we need to use a third, different function signature that takes three arguments context,req and res.\nIn this example we'll send a json in the response but since now we've got control full control of it we'll need to set the correct Content-Type manually.\nThis kind of control open to developers infinite use cases that process the request in different and unusual ways.\n"
     },
-    "code": {
-      "es6": "module.exports = function(context, req, res){\n res.writeHead(200, { 'Content-Type': 'application/json'});\n res.end('{\"hello\": \"world\"}');\n}\n"
-    },
+    "code": "module.exports = function(context, req, res){\n res.writeHead(200, { 'Content-Type': 'application/json'});\n res.end('{\"hello\": \"world\"}');\n}\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": "{}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "363e66b97fe0e59c45462e49996c6aef"
+    "id": "7ef712a8fe6092ef213b2111dce16006"
   },
   {
     "name": "Handling multipart/form-data content-type",
@@ -469,24 +460,24 @@
     },
     "order": 17,
     "description": "How to handle multipart/form-data content-type\n",
-    "note": {
-      "title": "instructions",
-      "content": "With full control function signature since we have the raw request we can afford to parse the multipart/form-data content type.\nTo do so we need to disable the Parse body property that can be found in the Properties tab.\nIn this example we'll send a file and using the node module named multiparty we'll parse the request in order to access the fields and the files server side.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "With full control function signature since we have the raw request we can afford to parse the multipart/form-data content type.\nTo do so we need to disable the Parse body property that can be found in the Properties tab.\nIn this example we'll send a file and using the node module named multiparty we'll parse the request in order to access the fields and the files server side.\n",
+      "wt-node-dependencies": "{ \"multiparty\": \"4.1.2\"}\n"
     },
-    "code": {
-      "es6": "const multiparty = require('multiparty@4.1.2');\n\nmodule.exports = function(context, req, res){\n    var form = new multiparty.Form();\n\n    form.parse(req, function(err, fields, files) {\n      res.writeHead(200, {'content-type': 'application/json'});\n      const result = {fields, files};\n      res.end(JSON.stringify(result));\n    });  \n}\n"
-    },
+    "code": "const multiparty = require('multiparty@4.1.2');\n\nmodule.exports = function(context, req, res){\n    var form = new multiparty.Form();\n\n    form.parse(req, function(err, fields, files) {\n      res.writeHead(200, {'content-type': 'application/json'});\n      const result = {fields, files};\n      res.end(JSON.stringify(result));\n    });\n}\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
       "mode": "body",
       "data": {}
     },
-    "settings": {
+    "body": {
       "parse": false,
       "merge": true
     },
-    "id": "10fe2dccdcd1a20af9d0583cfbe3cea7"
+    "id": "9a186f48c27246331ea5dffbb91a39e0"
   },
   {
     "name": "Express",
@@ -497,15 +488,18 @@
       "link": "https://github.com/jcenturion"
     },
     "description": "A sample about how to use Express from Code Block.\n",
-    "note": null,
-    "code": {
-      "es6": "const express    = require('express');\nconst Webtask    = require('webtask-tools');\nconst bodyParser = require('body-parser');\nconst app = express();\n\napp.use(bodyParser.json());\n\napp.get('/', function (req, res) {\n  res.sendStatus(200);\n});\n\nmodule.exports = Webtask.fromExpress(app);\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "A sample about how to use Express from Code Block.\n",
+      "wt-node-dependencies": "{ \"express\": \"4.16.3\", \"webtask-tools\":\"3.2.0\", \"body-parser\":\"1.18.2\"}\n"
     },
-    "settings": {
+    "code": "const express    = require('express');\nconst Webtask    = require('webtask-tools');\nconst bodyParser = require('body-parser');\nconst app = express();\n\napp.use(bodyParser.json());\n\napp.get('/', function (req, res) {\n  res.sendStatus(200);\n});\n\nmodule.exports = Webtask.fromExpress(app);\n",
+    "body": {
       "parse": false,
       "merge": false
     },
-    "id": "9219af241b7c7b16047b95e64d27c6d8"
+    "id": "0ed26add90e10bbf4ff5789de06ed867"
   },
   {
     "name": "Express with view",
@@ -516,15 +510,18 @@
       "link": "https://github.com/Verlic"
     },
     "description": "A sample about how to use Express with embeded view from Code Block.\n",
-    "note": null,
-    "code": {
-      "es6": "const express = require('express');\nconst fromExpress = require('webtask-tools').fromExpress;\nconst bodyParser = require('body-parser');\nconst app = express();\n\napp.use(bodyParser.json());\n\napp.get('/', (req, res) => {\n  const HTML = renderView({\n    title: 'My Code Block View',\n    body: '<h1>Simple Code Block view</h1>'\n  });\n\n  res.set('Content-Type', 'text/html');\n  res.status(200).send(HTML);\n});\n\nmodule.exports = fromExpress(app);\n\nfunction renderView(locals) {\n  return `\n        <!DOCTYPE html>\n        <html>\n        <head>\n          <meta charset=\"utf-8\">\n          <title>${locals.title}</title>\n        </head>\n\n        <body>\n          ${locals.body}\n        </body>\n        </html>\n      `;\n}\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "A sample about how to use Express with embeded view from Code Block.\n",
+      "wt-node-dependencies": "{ \"express\": \"4.16.3\", \"webtask-tools\":\"3.2.0\", \"body-parser\":\"1.18.2\"}\n"
     },
-    "settings": {
+    "code": "const express = require('express');\nconst fromExpress = require('webtask-tools').fromExpress;\nconst bodyParser = require('body-parser');\nconst app = express();\n\napp.use(bodyParser.json());\n\napp.get('/', (req, res) => {\n  const HTML = renderView({\n    title: 'My Code Block View',\n    body: '<h1>Simple Code Block view</h1>'\n  });\n\n  res.set('Content-Type', 'text/html');\n  res.status(200).send(HTML);\n});\n\nmodule.exports = fromExpress(app);\n\nfunction renderView(locals) {\n  return `\n        <!DOCTYPE html>\n        <html>\n        <head>\n          <meta charset=\"utf-8\">\n          <title>${locals.title}</title>\n        </head>\n\n        <body>\n          ${locals.body}\n        </body>\n        </html>\n      `;\n}\n",
+    "body": {
       "parse": false,
       "merge": false
     },
-    "id": "ce809afe3b2aec33a36313140e46bb1c"
+    "id": "dc985a73c6c7510a2fc7986cb87d141a"
   },
   {
     "name": "Express with mlab",
@@ -535,21 +532,21 @@
     },
     "order": 20,
     "description": "A sample about how to use Express with mlab from Code Blocks.\n",
-    "note": {
-      "title": "instructions",
-      "content": "You must set a valid <code>MONGO_URL</code> Code Block secret for it to work.\nie. <code>mongodb://user:pwd@ds012345.mlab.com:56789/dbname</code>\n<br/>\n<br/>\nMore info about <a href=\"http://docs.mlab.com\" target=\"_blank\">MLab</a>\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "You must set a valid <code>MONGO_URL</code> Code Block secret for it to work.\nie. <code>mongodb://user:pwd@ds012345.mlab.com:56789/dbname</code>\n<br/>\n<br/>\nMore info about <a href=\"http://docs.mlab.com\" target=\"_blank\">MLab</a>\n",
+      "wt-node-dependencies": "{ \"express\": \"4.16.3\", \"webtask-tools\":\"3.2.0\", \"body-parser\":\"1.18.2\", \"mongodb\":\"3.0.5\"}\n"
     },
-    "code": {
-      "es6": "const bodyParser = require('body-parser');\nconst express = require('express');\nconst Webtask = require('webtask-tools');\nconst MongoClient = require('mongodb').MongoClient;\nconst ObjectID = require('mongodb').ObjectID;\n\nconst collection = 'my-collection';\nconst server = express();\n\nserver.use(bodyParser.json());\n\nserver.get('/:_id', (req, res, next) => {\n  const MONGO_URL = req.webtaskContext.secrets.MONGO_URL;\n  const _id = req.params._id;\n  MongoClient.connect(MONGO_URL, (err, db) => {\n    if (err) return next(err);\n    db.collection(collection).findOne({ _id : new ObjectID(_id) }, (err, result) => {\n      db.close();\n      if (err) return next(err);\n      res.status(200).send(result);\n    });\n  });\n});\n\nserver.post('/', (req, res, next) => {\n  const MONGO_URL = req.webtaskContext.secrets.MONGO_URL;\n  // Do data sanitation here.\n  const model = req.body;\n  MongoClient.connect(MONGO_URL, (err, db) => {\n    if (err) return next(err);\n    db.collection(collection).insertOne(model, (err, result) => {\n      db.close();\n      if (err) return next(err);\n      res.status(201).send(result);\n    });\n  });\n});\n\nmodule.exports = Webtask.fromExpress(server);\n"
-    },
+    "code": "const bodyParser = require('body-parser');\nconst express = require('express');\nconst Webtask = require('webtask-tools');\nconst MongoClient = require('mongodb').MongoClient;\nconst ObjectID = require('mongodb').ObjectID;\n\nconst collection = 'my-collection';\nconst server = express();\n\nserver.use(bodyParser.json());\n\nserver.get('/:_id', (req, res, next) => {\n  const MONGO_URL = req.webtaskContext.secrets.MONGO_URL;\n  const _id = req.params._id;\n  MongoClient.connect(MONGO_URL, (err, db) => {\n    if (err) return next(err);\n    db.collection(collection).findOne({ _id : new ObjectID(_id) }, (err, result) => {\n      db.close();\n      if (err) return next(err);\n      res.status(200).send(result);\n    });\n  });\n});\n\nserver.post('/', (req, res, next) => {\n  const MONGO_URL = req.webtaskContext.secrets.MONGO_URL;\n  // Do data sanitation here.\n  const model = req.body;\n  MongoClient.connect(MONGO_URL, (err, db) => {\n    if (err) return next(err);\n    db.collection(collection).insertOne(model, (err, result) => {\n      db.close();\n      if (err) return next(err);\n      res.status(201).send(result);\n    });\n  });\n});\n\nmodule.exports = Webtask.fromExpress(server);\n",
     "secrets": {
       "MONGO_URL": "REPLACE_WITH_MONGO_URL"
     },
-    "settings": {
+    "body": {
       "parse": false,
       "merge": false
     },
-    "id": "a71ff5d836aa92225ca4a0ebecb23a10"
+    "id": "075eca7ad5eb809b6a8d057ba8ed4f14"
   },
   {
     "name": "Automatically tag new versions",
@@ -558,23 +555,23 @@
       "link": "https://github.com/ggoodman"
     },
     "order": 21,
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "<ul>\n  <li>- Create a Github API token with <code>repo</code> access from: <code>https://github.com/settings/tokens/new.</code></li>\n  <li>- Go to <code>https://github.com/:user/:repository/settings/hooks/new</code>.</li>\n  <li>- Use the url of this Code Block as <code>Payload URL</code>.</li>\n  <li>- Click on <code>Add Webhook</code>.</li>\n</ul> <br/>\n<p>Note: Requires a secret called <code>GITHUB_TOKEN</code> containing your GitHub access token.</p>\n",
+      "wt-node-dependencies": "{ \"bluebird\": \"3.5.1\", \"request\": \"2.85.0\", \"lodash\": \"4.17.5\"}\n"
+    },
     "type": "webhook",
     "description": "A Code Block that can be used as a Github webhook to automatically tag new versions based on changes to the file package.json.\n",
-    "note": {
-      "title": "Instructions",
-      "content": "<ul>\n  <li>- Create a Github API token with <code>repo</code> access from: <code>https://github.com/settings/tokens/new.</code></li>\n  <li>- Go to <code>https://github.com/:user/:repository/settings/hooks/new</code>.</li>\n  <li>- Use the url of this Code Block as <code>Payload URL</code>.</li>\n  <li>- Click on <code>Add Webhook</code>.</li>\n</ul> <br/>\n<p>Note: Requires a secret called <code>GITHUB_TOKEN</code> containing your GitHub access token.</p>\n"
-    },
-    "code": {
-      "es6": "var Bluebird = require('bluebird');\nvar Request = Bluebird.promisifyAll(require('request'));\nvar _       = require('lodash');\n\nvar API_URL = 'https://api.github.com';\nvar WEB_URL = 'https://github.com';\nvar REF = 'refs/heads/master';\n\nmodule.exports = function (ctx, cb) {\n  var msg;\n  var err;\n\n  if (!ctx.body) {\n    err = new Error('This Code Block must be saved with the Parse body option set to true');\n    return cb(err);\n  }\n\n  if (!Array.isArray(ctx.body.commits)) {\n    err = new Error('Unexpected payload: Missing commits array.');\n    return cb(err);\n  }\n\n  if (!ctx.body.repository) {\n    err = new Error('Unexpected payload: Missing repository information.');\n    return cb(err);\n  }\n  var payload = ctx.body;\n  var affectsPackageJson = _.find(payload.commits, function (commit) {\n    return commit.modified.indexOf('package.json') >= 0\n        || commit.added.indexOf('package.json') >= 0;\n  });\n\n  if (payload.ref !== REF) {\n    msg = 'Push event does not affect the ref `' + REF + '`.';\n    return cb(null, msg);\n  }\n\n  if (!affectsPackageJson) {\n    msg = 'Commits `' + _(payload.commits).pluck('id').join('`, `')\n        + '` do not affect the file `package.json`.';\n    return cb(null, msg);\n  }\n\n  var headers = {\n    'Authorization': 'Bearer ' + ctx.secrets.GITHUB_TOKEN,\n    'User-Agent': 'Code Block Tagger',\n  };\n\n  var versionBeforePromise = getVersionFromCommit(payload.before);\n  var versionAfterPromise = getVersionFromCommit(payload.after);\n\n  Bluebird.join(versionBeforePromise, versionAfterPromise, function (versionBefore, versionAfter) {\n    return versionBefore !== versionAfter\n        ? createNewTag(payload.after, versionAfter)\n        : 'This push did not update the package\\'s version';\n  })\n  .nodeify(cb);\n\n\n  // Helper functions\n\n  function getVersionFromCommit(commitSha) {\n    // If we're dealing with the initial commit, the `before`\n    // commit sha will be zeroed out. Shortcut and return 0.0.0.\n    if (commitSha === '0000000000000000000000000000000000000000') {\n      return Bluebird.resolve('0.0.0');\n    }\n\n    var url = WEB_URL + '/' + payload.repository.full_name + '/raw/' + commitSha + '/package.json';\n    var promise = Request.getAsync(url);\n\n    return promise\n      // Because request callbacks have the (err, res, body) signature,\n      // Bluebird will resolve to a 2-element array like [res, body].\n      // We only want the body, at index 1 in the array.\n      .get(1)\n      // The body should be a plain String, we want to parse\n      // it into a javascript object.\n      .then(JSON.parse)\n      // Now that our Promise contains the parsed package.json, let's\n      // pull out the `version`.\n      .get('version');\n  }\n\n  function createNewTag(commitSha, version) {\n    var now = new Date();\n    var url = API_URL + '/repos/' + payload.repository.full_name + '/git/tags';\n    var options = {\n      url: url,\n      headers: headers,\n      json: true,\n      body: {\n          tag: 'v' + version,\n          message: 'v' + version,\n          object: commitSha,\n          type: 'commit',\n          tagger: {\n              name: payload.pusher.name,\n              email: payload.pusher.email,\n              date: now.toISOString(),\n          },\n      }\n    };\n    var promise = Request.postAsync(options);\n\n    return promise\n      .get(1)\n      .then(function (tag) {\n          return createTagRef(tag.sha, tag.tag);\n      });\n  }\n\n  function createTagRef(commitSha, tagName) {\n    var url = API_URL + '/repos/' + payload.repository.full_name + '/git/refs';\n    var options = {\n      url: url,\n      headers: headers,\n      json: true,\n      body: {\n          ref: 'refs/tags/' + tagName,\n          sha: commitSha,\n      },\n    };\n    var promise = Request.postAsync(options);\n\n    return promise\n      .get(1)\n      .then(function (tagRef) {\n          return 'Successfully created tag `' + tagName + '`.';\n      });\n  }\n};\n"
-    },
-    "settings": {
-      "parse": true,
-      "merge": true
-    },
+    "code": "var Bluebird = require('bluebird');\nvar Request = Bluebird.promisifyAll(require('request'));\nvar _       = require('lodash');\n\nvar API_URL = 'https://api.github.com';\nvar WEB_URL = 'https://github.com';\nvar REF = 'refs/heads/master';\n\nmodule.exports = function (ctx, cb) {\n  var msg;\n  var err;\n\n  if (!ctx.body) {\n    err = new Error('This Code Block must be saved with the Parse body option set to true');\n    return cb(err);\n  }\n\n  if (!Array.isArray(ctx.body.commits)) {\n    err = new Error('Unexpected payload: Missing commits array.');\n    return cb(err);\n  }\n\n  if (!ctx.body.repository) {\n    err = new Error('Unexpected payload: Missing repository information.');\n    return cb(err);\n  }\n  var payload = ctx.body;\n  var affectsPackageJson = _.find(payload.commits, function (commit) {\n    return commit.modified.indexOf('package.json') >= 0\n        || commit.added.indexOf('package.json') >= 0;\n  });\n\n  if (payload.ref !== REF) {\n    msg = 'Push event does not affect the ref `' + REF + '`.';\n    return cb(null, msg);\n  }\n\n  if (!affectsPackageJson) {\n    msg = 'Commits `' + _(payload.commits).pluck('id').join('`, `')\n        + '` do not affect the file `package.json`.';\n    return cb(null, msg);\n  }\n\n  var headers = {\n    'Authorization': 'Bearer ' + ctx.secrets.GITHUB_TOKEN,\n    'User-Agent': 'Code Block Tagger',\n  };\n\n  var versionBeforePromise = getVersionFromCommit(payload.before);\n  var versionAfterPromise = getVersionFromCommit(payload.after);\n\n  Bluebird.join(versionBeforePromise, versionAfterPromise, function (versionBefore, versionAfter) {\n    return versionBefore !== versionAfter\n        ? createNewTag(payload.after, versionAfter)\n        : 'This push did not update the package\\'s version';\n  })\n  .nodeify(cb);\n\n\n  // Helper functions\n\n  function getVersionFromCommit(commitSha) {\n    // If we're dealing with the initial commit, the `before`\n    // commit sha will be zeroed out. Shortcut and return 0.0.0.\n    if (commitSha === '0000000000000000000000000000000000000000') {\n      return Bluebird.resolve('0.0.0');\n    }\n\n    var url = WEB_URL + '/' + payload.repository.full_name + '/raw/' + commitSha + '/package.json';\n    var promise = Request.getAsync(url);\n\n    return promise\n      // Because request callbacks have the (err, res, body) signature,\n      // Bluebird will resolve to a 2-element array like [res, body].\n      // We only want the body, at index 1 in the array.\n      .get(1)\n      // The body should be a plain String, we want to parse\n      // it into a javascript object.\n      .then(JSON.parse)\n      // Now that our Promise contains the parsed package.json, let's\n      // pull out the `version`.\n      .get('version');\n  }\n\n  function createNewTag(commitSha, version) {\n    var now = new Date();\n    var url = API_URL + '/repos/' + payload.repository.full_name + '/git/tags';\n    var options = {\n      url: url,\n      headers: headers,\n      json: true,\n      body: {\n          tag: 'v' + version,\n          message: 'v' + version,\n          object: commitSha,\n          type: 'commit',\n          tagger: {\n              name: payload.pusher.name,\n              email: payload.pusher.email,\n              date: now.toISOString(),\n          },\n      }\n    };\n    var promise = Request.postAsync(options);\n\n    return promise\n      .get(1)\n      .then(function (tag) {\n          return createTagRef(tag.sha, tag.tag);\n      });\n  }\n\n  function createTagRef(commitSha, tagName) {\n    var url = API_URL + '/repos/' + payload.repository.full_name + '/git/refs';\n    var options = {\n      url: url,\n      headers: headers,\n      json: true,\n      body: {\n          ref: 'refs/tags/' + tagName,\n          sha: commitSha,\n      },\n    };\n    var promise = Request.postAsync(options);\n\n    return promise\n      .get(1)\n      .then(function (tagRef) {\n          return 'Successfully created tag `' + tagName + '`.';\n      });\n  }\n};\n",
     "secrets": {
       "GITHUB_TOKEN": "REPLACE_WITH_GITHUB_TOKEN"
     },
-    "id": "660d057de0e5ba1b7a5472a0eb744360"
+    "body": {
+      "parse": true,
+      "merge": true
+    },
+    "id": "ddeafd31e9a8131b2ccd7f2793669289"
   },
   {
     "name": "Query a Stamplay Object",
@@ -585,22 +582,24 @@
     },
     "order": 22,
     "description": "How to use the Stamplay Node.js SDK to query a Stamplay Object\n",
-    "note": {
-      "title": "instructions",
-      "content": "This template shows how to use the Stamplay Node.js SDK to query a Stamplay Object.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "This template shows how to use the Stamplay Node.js SDK to query a Stamplay Object.\n",
+      "wt-node-dependencies": "{ \"stamplay\": \"1.0.8\"}\n"
     },
-    "code": {
-      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n  var query = {\n    YOUR_PROP : 'PROP_VALUE'\n  }\n  stamplay.Object('YOUR_OBJECT_ID').get(query, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n",
+    "code": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n  var query = {\n    YOUR_PROP : 'PROP_VALUE'\n  }\n  stamplay.Object('YOUR_OBJECT_ID').get(query, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n",
+    "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
     "sampleRequest": {
       "method": "GET"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "0638ebad748bb01d1e84322b34eb3f8c"
+    "id": "04b67e836b92b2d767111c50b001656e"
   },
   {
     "name": "Query a Stamplay Object by _id",
@@ -611,24 +610,24 @@
     },
     "order": 23,
     "description": "How to use the Stamplay Node.js SDK to query a Stamplay Object by _id\n",
-    "note": {
-      "title": "instructions",
-      "content": "This template shows how to use the Stamplay Node.js SDK to get a Stamplay Object by _id.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "This template shows how to use the Stamplay Node.js SDK to get a Stamplay Object by _id.\n",
+      "wt-node-dependencies": "{ \"stamplay\": \"1.0.8\"}\n"
     },
-    "code": {
-      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  var query = {\n    _id : 'YOUR_INSTANCE_OBJECT_ID'\n  }\n  stamplay.Object('YOUR_OBJECT_ID').get(query, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n"
-    },
+    "code": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  var query = {\n    _id : 'YOUR_INSTANCE_OBJECT_ID'\n  }\n  stamplay.Object('YOUR_OBJECT_ID').get(query, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n",
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
     "sampleRequest": {
       "method": "GET"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "fb77b7ffbb692dcf778f526d434d4f94"
+    "id": "62f22d6986e803a236a55ff281daa0d2"
   },
   {
     "name": "Create a Stamplay Object",
@@ -639,24 +638,24 @@
     },
     "order": 24,
     "description": "How to use the Stamplay Node.js SDK to create a Stamplay Object\n",
-    "note": {
-      "title": "instructions",
-      "content": "This template shows how to use the Stamplay Node.js SDK to create a Stamplay Object.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "This template shows how to use the Stamplay Node.js SDK to create a Stamplay Object.\n",
+      "wt-node-dependencies": "{ \"stamplay\": \"1.0.8\"}\n"
     },
-    "code": {
-      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n  const data = {\n    YOUR_PROP : 'PROP_VALUE',\n  };\n\n  stamplay.Object('YOUR_OBJECT_ID').save(data, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n"
-    },
+    "code": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n  const data = {\n    YOUR_PROP : 'PROP_VALUE',\n  };\n\n  stamplay.Object('YOUR_OBJECT_ID').save(data, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n",
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
     "sampleRequest": {
       "method": "GET"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "78407267886f3f2b4df4def460056407"
+    "id": "ad0e5bd36c749ee325496eb6878edcca"
   },
   {
     "name": "Update an existing Stamplay Object",
@@ -667,24 +666,24 @@
     },
     "order": 25,
     "description": "How to use the Stamplay Node.js SDK to update a Stamplay Object\n",
-    "note": {
-      "title": "instructions",
-      "content": "This template shows how to use the Stamplay Node.js SDK to partially/fully update a Stamplay Object.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "This template shows how to use the Stamplay Node.js SDK to partially/fully update a Stamplay Object.\n",
+      "wt-node-dependencies": "{ \"stamplay\": \"1.0.8\"}\n"
     },
-    "code": {
-      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  const _id = 'YOUR_INSTANCE_OBJECT_ID';\n  const data = {\n    YOUR_PROP : 'PROP_VALUE',\n  };\n\n  /**\n   * Use the .update method to PUT the object\n   * Using the PUT method you will need to send the entire object representation\n   */\n  \n  stamplay.Object('YOUR_OBJECT_ID').patch(_id, data, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n"
-    },
+    "code": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  const _id = 'YOUR_INSTANCE_OBJECT_ID';\n  const data = {\n    YOUR_PROP : 'PROP_VALUE',\n  };\n\n  /**\n   * Use the .update method to PUT the object\n   * Using the PUT method you will need to send the entire object representation\n   */\n\n  stamplay.Object('YOUR_OBJECT_ID').patch(_id, data, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n",
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
     "sampleRequest": {
       "method": "GET"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "d839650479a1bd8345cb4e856f558dcf"
+    "id": "87578bfc418dcfa02685e57626d50987"
   },
   {
     "name": "Delete an existing Stamplay Object",
@@ -695,24 +694,24 @@
     },
     "order": 26,
     "description": "How to use the Stamplay Node.js SDK to update a Stamplay Object\n",
-    "note": {
-      "title": "instructions",
-      "content": "This template shows how to use the Stamplay Node.js SDK to delete a Stamplay Object.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "This template shows how to use the Stamplay Node.js SDK to delete a Stamplay Object.\n",
+      "wt-node-dependencies": "{ \"stamplay\": \"1.0.8\"}\n"
     },
-    "code": {
-      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  const _id = 'INSTANCE_OBJECT_ID';\n\n  stamplay.Object('YOUR_OBJECT_ID').remove(_id, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n"
-    },
+    "code": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  const _id = 'INSTANCE_OBJECT_ID';\n\n  stamplay.Object('YOUR_OBJECT_ID').remove(_id, (err, response)=>{\n    if(err){\n      return cb(err);\n    }\n    return cb(null, response);\n  });\n};\n",
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
     "sampleRequest": {
       "method": "GET"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "e68f1f46695cdcdee00992ebd95930cd"
+    "id": "ed0f7f84aa3f9a521165aa4cc47fb816"
   },
   {
     "name": "Retrieve a random object",
@@ -723,24 +722,24 @@
     },
     "order": 27,
     "description": "How to use the Stamplay Node.js SDK to get a random Stamplay Object\n",
-    "note": {
-      "title": "instructions",
-      "content": "This template shows how to use the Stamplay Node.js SDK to retrieve a random Stamplay Object.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "This template shows how to use the Stamplay Node.js SDK to retrieve a random Stamplay Object.\n",
+      "wt-node-dependencies": "{ \"stamplay\": \"1.0.8\"}\n"
     },
-    "code": {
-      "es6": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  var query = {}\n  stamplay.Object('YOUR_OBJECT_ID').get({}, (err, response) => {\n    if (err) {\n      return cb(err);\n    }\n    var responseObj = response;\n    var totalElements = responseObj.pagination.total_elements;\n\n    var random = parseInt(Math.random() * (totalElements - 1) + 1);\n    stamplay.Object('YOUR_OBJECT_ID').get({\n      page: random,\n      per_page: 1\n    }, (err, res) => {\n      if(err){\n        return cb(err);\n      }\n      cb(null, res);\n    });\n  });\n};\n"
-    },
+    "code": "const Stamplay = require('stamplay@1.0.8');\n\nmodule.exports = function (context, cb) {\n  const stamplay = new Stamplay('YOUR_APPID', context.secrets.apiKey);\n\n  var query = {}\n  stamplay.Object('YOUR_OBJECT_ID').get({}, (err, response) => {\n    if (err) {\n      return cb(err);\n    }\n    var responseObj = response;\n    var totalElements = responseObj.pagination.total_elements;\n\n    var random = parseInt(Math.random() * (totalElements - 1) + 1);\n    stamplay.Object('YOUR_OBJECT_ID').get({\n      page: random,\n      per_page: 1\n    }, (err, res) => {\n      if(err){\n        return cb(err);\n      }\n      cb(null, res);\n    });\n  });\n};\n",
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
     "sampleRequest": {
       "method": "GET"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "e01671a6d130c7fa7c4aff1314705d41"
+    "id": "0fa756409c010f5ee8fabc073c7958c6"
   },
   {
     "name": "Upload a file to S3",
@@ -751,13 +750,13 @@
     },
     "order": 28,
     "description": "How to upload a file from an URL to S3\n",
-    "note": {
-      "title": "instructions",
-      "content": "This template shows how to use the AWS SDK to upload a file to S3 starting from an URL.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "This template shows how to use the AWS SDK to upload a file to S3 starting from an URL.\n",
+      "wt-node-dependencies": "{ \"aws-sdk\": \"2.5.3\", \"s3-blob-store\":\"0.1.0\", \"pump\":\"1.0.0\", \"request\":\"2.55.0\"}\n"
     },
-    "code": {
-      "es6": "const url = require('url');\nconst path = require('path');\nconst aws = require('aws-sdk@2.5.3');\nconst s3blobs = require('s3-blob-store@0.1.0');\nconst pump = require('pump@1.0.0');\nconst request = require('request@2.55.0');\n \nmodule.exports = function(context, callback){\n  const fetchUrl = context.data.url;\n  const pathName = url.parse(fetchUrl).pathname;\n  const fileName = path.basename(pathName);\n  \n  const client = new aws.S3({\n    accessKeyId: context.secrets.ACCESSKEY,\n    secretAccessKey: context.secrets.SECRETKEY\n  });  \n  \n  const store = s3blobs({\n    client: client,\n    bucket: 'YOUR_BUCKET',\n  });\n  \n  const fileStream = request.get(fetchUrl);\n  const writeStream = store.createWriteStream({ key: fileName })\n  return pump(fileStream, writeStream, (error) => {\n    if(error){\n      return callback(error);\n    }\n    return callback(null, {message : 'Upload successfull'});\n  });\n}\n"
-    },
+    "code": "const url = require('url');\nconst path = require('path');\nconst aws = require('aws-sdk@2.5.3');\nconst s3blobs = require('s3-blob-store@0.1.0');\nconst pump = require('pump@1.0.0');\nconst request = require('request@2.55.0');\n\nmodule.exports = function(context, callback){\n  const fetchUrl = context.data.url;\n  const pathName = url.parse(fetchUrl).pathname;\n  const fileName = path.basename(pathName);\n\n  const client = new aws.S3({\n    accessKeyId: context.secrets.ACCESSKEY,\n    secretAccessKey: context.secrets.SECRETKEY\n  });\n\n  const store = s3blobs({\n    client: client,\n    bucket: 'YOUR_BUCKET',\n  });\n\n  const fileStream = request.get(fetchUrl);\n  const writeStream = store.createWriteStream({ key: fileName })\n  return pump(fileStream, writeStream, (error) => {\n    if(error){\n      return callback(error);\n    }\n    return callback(null, {message : 'Upload successfull'});\n  });\n}\n",
     "secrets": {
       "ACCESSKEY": "ACCESSKEY",
       "SECRETKEY": "SECRETKEY"
@@ -768,11 +767,11 @@
       "mode": "body",
       "data": "{ \"url\" : \"https://mydomain.com/image.jpg\"}\n"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "cf0fde011b13e0df3981275ed5e173a9"
+    "id": "a9de376f2f906cadf61878e90c936b34"
   },
   {
     "name": "IBM Watson Speech to Text",
@@ -783,13 +782,13 @@
     },
     "order": 29,
     "description": "Use IBM Watson Speech to Text service to recognize the text from a .wav file.\n",
-    "note": {
-      "title": "instructions",
-      "content": "This example takes as an input a URL to a .wav audio file and pass it to IBM Watson Speech to Text to recognize the text.\n"
+    "meta": {
+      "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
+      "wt-editor-language": "javascript",
+      "wt-editor-template-instructions": "This example takes as an input a URL to a .wav audio file and pass it to IBM Watson Speech to Text to recognize the text.\n",
+      "wt-node-dependencies": "{ \"request\":\"2.67.0\", \"watson-developer-cloud\":\"3.2.1\"}\n"
     },
-    "code": {
-      "es6": "const request = require('request@2.67.0');\nconst SpeechToTextV1 = require('watson-developer-cloud/speech-to-text/v1');\n\nmodule.exports = function (context, cb) {\n\n  //a public fileUrl passed as a parameter to the Code Block \n  //e.g https://app.box.com/shared/static/8kt9roithydgnz80bonk9ea9oh7n2hfm.wav\n  const fileUrl = context.data.fileUrl;\n  \n  //Initialize Watson SpeechToText\n  const speech_to_text = new SpeechToTextV1({\n    username: context.secrets.watson_username,\n    password: context.secrets.watson_password\n  });\n  \n  //prepare the request content for Watson \n  const params = {\n    audio: request(fileUrl),\n    content_type: 'audio/wav' //'audio/flac', 'audio/l16; rate=44100', 'audio/ogg;codecs=opus'\n  };\n  \n  //pass the audio file to Watson\n  return speech_to_text.recognize(params, function(err, res) {\n    if (err) {\n      return cb(err)    \n    }\n    return cb(null, res)    \n  });\n};\n"
-    },
+    "code": "const request = require('request@2.67.0');\nconst SpeechToTextV1 = require('watson-developer-cloud/speech-to-text/v1');\n\nmodule.exports = function (context, cb) {\n\n  //a public fileUrl passed as a parameter to the Code Block\n  //e.g https://app.box.com/shared/static/8kt9roithydgnz80bonk9ea9oh7n2hfm.wav\n  const fileUrl = context.data.fileUrl;\n\n  //Initialize Watson SpeechToText\n  const speech_to_text = new SpeechToTextV1({\n    username: context.secrets.watson_username,\n    password: context.secrets.watson_password\n  });\n\n  //prepare the request content for Watson\n  const params = {\n    audio: request(fileUrl),\n    content_type: 'audio/wav' //'audio/flac', 'audio/l16; rate=44100', 'audio/ogg;codecs=opus'\n  };\n\n  //pass the audio file to Watson\n  return speech_to_text.recognize(params, function(err, res) {\n    if (err) {\n      return cb(err)\n    }\n    return cb(null, res)\n  });\n};\n",
     "sampleRequest": {
       "method": "POST",
       "type": "json",
@@ -800,10 +799,10 @@
       "watson_username": "IBM_Speech_to_text_username",
       "watson_password": "IBM_Speech_to_text_password"
     },
-    "settings": {
+    "body": {
       "parse": true,
       "merge": true
     },
-    "id": "60129a28f82ca2dc52518681cf8ca011"
+    "id": "512bc8b0fb0e2f75fb0f61b33245a3d9"
   }
 ]

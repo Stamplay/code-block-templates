@@ -1,20 +1,22 @@
 name: Face detection with Cloudinary
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 13
 description: |
   Face detection made easy using Cloudinary service and node module.
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     Our available modules include among third party services Cloudinary, an image and video managment on the cloud.
     Here is an example of how to use it for uploading an image on their service and request a face detection.
-    After requiring and configuring the library using the secrets area in order to save the key and the secret, 
+    After requiring and configuring the library using the secrets area in order to save the key and the secret,
     we're uploading the image from an url and requesting the face detection feature.
-code:
-  es6: |
+  wt-node-dependencies: |
+    { "cloudinary": "1.11.0"}
+code: |
     const cloudinary = require('cloudinary');
     const options = {
       public_id: "eager_sample",
@@ -25,7 +27,7 @@ code:
         crop: 'thumb'
       }
     }
-    
+
     module.exports = function (context, cb) {
       cloudinary.config({
         cloud_name: context.data.cloud_name,
@@ -33,22 +35,22 @@ code:
         api_secret: context.data.api_secret,
         secure: true
       });
-    
+
       cloudinary.uploader.upload(
         context.data.url,
         function (result) {
           return cb(null, result);
         }, options);
     };
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     {"url" : "https://res.cloudinary.com/demo/image/upload/butterfly.jpg"}
-settings:
-  parse: true
-  merge: true
-secrets : 
+secrets :
   api_key : 'CLOUDINARY_API_KEY'
   api_secret : 'CLOUDINARY_API_SECRET'
+body:
+  parse: true
+  merge: true

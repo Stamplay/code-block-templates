@@ -1,29 +1,29 @@
 name: Accessing the request
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 16
 description: |
   How to access the raw request.
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     In order to have a full control of the CodeBlock we need to use a third, different function signature that takes three arguments context,req and res.
     In this example we'll send a json in the response but since now we've got control full control of it we'll need to set the correct Content-Type manually.
     This kind of control open to developers infinite use cases that process the request in different and unusual ways.
-code:
-  es6: |
+code: |
     module.exports = function(context, req, res){
      res.writeHead(200, { 'Content-Type': 'application/json'});
      res.end('{"hello": "world"}');
     }
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     {}
-settings:
+body:
   parse: true
   merge: true

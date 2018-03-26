@@ -1,39 +1,41 @@
 name: Upload a file to S3
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 28
 description: |
   How to upload a file from an URL to S3
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     This template shows how to use the AWS SDK to upload a file to S3 starting from an URL.
-code:
-  es6: |
+  wt-node-dependencies: |
+    { "aws-sdk": "2.5.3", "s3-blob-store":"0.1.0", "pump":"1.0.0", "request":"2.55.0"}
+code: |
     const url = require('url');
     const path = require('path');
     const aws = require('aws-sdk@2.5.3');
     const s3blobs = require('s3-blob-store@0.1.0');
     const pump = require('pump@1.0.0');
     const request = require('request@2.55.0');
-     
+
     module.exports = function(context, callback){
       const fetchUrl = context.data.url;
       const pathName = url.parse(fetchUrl).pathname;
       const fileName = path.basename(pathName);
-      
+
       const client = new aws.S3({
         accessKeyId: context.secrets.ACCESSKEY,
         secretAccessKey: context.secrets.SECRETKEY
-      });  
-      
+      });
+
       const store = s3blobs({
         client: client,
         bucket: 'YOUR_BUCKET',
       });
-      
+
       const fileStream = request.get(fetchUrl);
       const writeStream = store.createWriteStream({ key: fileName })
       return pump(fileStream, writeStream, (error) => {
@@ -43,15 +45,15 @@ code:
         return callback(null, {message : 'Upload successfull'});
       });
     }
-secrets : 
+secrets :
   ACCESSKEY : 'ACCESSKEY'
   SECRETKEY : 'SECRETKEY'
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     { "url" : "https://mydomain.com/image.jpg"}
-settings:
+body:
   parse: true
   merge: true

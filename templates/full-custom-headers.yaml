@@ -1,17 +1,17 @@
 name: Response with custom headers
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 15
 description: |
   How to send custom response headers.
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     We can easily add some custom headers to the response since that with full control we can control everything.
-code:
-  es6: |
+code: |
     module.exports = function(context, req, res) {
       res.setHeader('x-custom-header', 'custom!');
       res.writeHead(200, {'Content-Type': 'application/json'});
@@ -20,12 +20,12 @@ code:
       };
       res.end(JSON.stringify(result));
     };
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     {}
-settings:
+body:
   parse: true
   merge: true

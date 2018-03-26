@@ -1,30 +1,32 @@
 name: Making HTTP requests
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 6
 description: |
-  How to make HTTP request in Code Blocks .
-note:
-  title: instructions
-  content: |
+  How to make HTTP request in Code Blocks.
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     Since you're executing Node.js code you are able to do HTTP[S] requests from your CodeBlock in a really easy way.
     To make your life easier you can use the request module and many others.
-code:
-  es6: |
-    const request = require('request@2.67.0');
+  wt-node-dependencies: |
+    { "request":"2.85.0"}
+code: |
+    const request = require('request');
     module.exports = function (cb) {
       return request('http://google.com', function (err, response, body) {
         return cb(err, response.statusCode);
       });
     };
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     {}
-settings:
+body:
   parse: true
   merge: true

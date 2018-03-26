@@ -1,47 +1,49 @@
-name: IBM Watson Speech to Text 
+name: IBM Watson Speech to Text
 type: sample
-author: 
+author:
   name: giuliano84
   link: https://github.com/giuliano84
 order: 29
 description: |
   Use IBM Watson Speech to Text service to recognize the text from a .wav file.
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     This example takes as an input a URL to a .wav audio file and pass it to IBM Watson Speech to Text to recognize the text.
-code:
-  es6: |
+  wt-node-dependencies: |
+    { "request":"2.67.0", "watson-developer-cloud":"3.2.1"}
+code: |
     const request = require('request@2.67.0');
     const SpeechToTextV1 = require('watson-developer-cloud/speech-to-text/v1');
 
     module.exports = function (context, cb) {
-  
-      //a public fileUrl passed as a parameter to the Code Block 
+
+      //a public fileUrl passed as a parameter to the Code Block
       //e.g https://app.box.com/shared/static/8kt9roithydgnz80bonk9ea9oh7n2hfm.wav
       const fileUrl = context.data.fileUrl;
-      
+
       //Initialize Watson SpeechToText
       const speech_to_text = new SpeechToTextV1({
         username: context.secrets.watson_username,
         password: context.secrets.watson_password
       });
-      
-      //prepare the request content for Watson 
+
+      //prepare the request content for Watson
       const params = {
         audio: request(fileUrl),
         content_type: 'audio/wav' //'audio/flac', 'audio/l16; rate=44100', 'audio/ogg;codecs=opus'
       };
-      
+
       //pass the audio file to Watson
       return speech_to_text.recognize(params, function(err, res) {
         if (err) {
-          return cb(err)    
+          return cb(err)
         }
-        return cb(null, res)    
+        return cb(null, res)
       });
     };
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
@@ -50,6 +52,6 @@ sampleRequest:
 secrets:
   watson_username : 'IBM_Speech_to_text_username'
   watson_password : 'IBM_Speech_to_text_password'
-settings:
+body:
   parse: true
   merge: true

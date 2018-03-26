@@ -1,22 +1,22 @@
 name: Accessing console
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 2
 description: |
   How to see real time console.logs.
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     For debugging purposes can be useful have a look at the variable
     values by using console.log. You can see real time logs by enabling
     the console from the Editor.
 
     After each Code Block execution you can see the request and the
     response body in the Stamplay Editor from the Logs view.
-code:
-  es6: |
+code: |
     module.exports = function (cb) {
       /**
        * You can see the console.log output in the Code Block log from the real time console
@@ -24,12 +24,12 @@ code:
       console.log('Hello world in console');
       return cb(null, 'Hello world, check the logs section in the Editor!');
     };
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     {}
-settings:
+body:
   parse: true
   merge: true

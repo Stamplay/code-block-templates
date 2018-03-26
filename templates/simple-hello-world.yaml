@@ -1,38 +1,38 @@
 name: Hello world
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 1
 description: |
   Hello world.
-note:
-  title: instructions
-  content: |
-    As you can see the function we're defining takes a callback 
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
+    As you can see the function we're defining takes a callback
     function that must be invoked when the code is completed.
     Since this code will run in a Node.js environment the callback
-    will take as a first argument an error and as a second argument 
-    the result which can be a string, a number, or an object that will 
+    will take as a first argument an error and as a second argument
+    the result which can be a string, a number, or an object that will
     be stringified as JSON.
-code:
-  es6: |
+code: |
     module.exports = function (cb) {
       /**
-      *    
+      *
       * if you want to send a json instead
       *  return cb(null,{
       *    hello: 'world'
       *  });
-      */ 
+      */
       return cb(null, 'Hello world!');
     };
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: |
     {}
-settings:
+body:
   parse: true
   merge: true

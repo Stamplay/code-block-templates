@@ -1,35 +1,37 @@
 name: Handling multipart/form-data content-type
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 17
 description: |
   How to handle multipart/form-data content-type
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     With full control function signature since we have the raw request we can afford to parse the multipart/form-data content type.
     To do so we need to disable the Parse body property that can be found in the Properties tab.
     In this example we'll send a file and using the node module named multiparty we'll parse the request in order to access the fields and the files server side.
-code:
-  es6: |
+  wt-node-dependencies: |
+    { "multiparty": "4.1.2"}
+code: |
     const multiparty = require('multiparty@4.1.2');
-    
+
     module.exports = function(context, req, res){
         var form = new multiparty.Form();
-    
+
         form.parse(req, function(err, fields, files) {
           res.writeHead(200, {'content-type': 'application/json'});
           const result = {fields, files};
           res.end(JSON.stringify(result));
-        });  
+        });
     }
-sampleRequest: 
+sampleRequest:
   method: 'POST'
   type: 'json'
   mode: 'body'
   data: {}
-settings:
+body:
   parse: false
   merge: true

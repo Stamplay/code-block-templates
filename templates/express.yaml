@@ -1,14 +1,19 @@
 name: Express
 type: sample
 order: 18
-author: 
+author:
   name: jcenturion
   link: https://github.com/jcenturion
 description: |
   A sample about how to use Express from Code Block.
-note:
-code:
-  es6: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
+    A sample about how to use Express from Code Block.
+  wt-node-dependencies: |
+    { "express": "4.16.3", "webtask-tools":"3.2.0", "body-parser":"1.18.2"}
+code: |
     const express    = require('express');
     const Webtask    = require('webtask-tools');
     const bodyParser = require('body-parser');
@@ -21,6 +26,6 @@ code:
     });
 
     module.exports = Webtask.fromExpress(app);
-settings :
+body :
   parse: false
   merge: false

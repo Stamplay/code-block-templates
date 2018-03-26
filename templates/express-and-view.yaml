@@ -1,14 +1,19 @@
 name: Express with view
 type: sample
 order: 19
-author: 
+author:
   name: verlic
   link: https://github.com/Verlic
 description: |
   A sample about how to use Express with embeded view from Code Block.
-note:
-code:
-  es6: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
+    A sample about how to use Express with embeded view from Code Block.
+  wt-node-dependencies: |
+    { "express": "4.16.3", "webtask-tools":"3.2.0", "body-parser":"1.18.2"}
+code: |
     const express = require('express');
     const fromExpress = require('webtask-tools').fromExpress;
     const bodyParser = require('body-parser');
@@ -43,6 +48,6 @@ code:
             </html>
           `;
     }
-settings : 
+body :
   parse : false
   merge : false

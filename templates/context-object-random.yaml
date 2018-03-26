@@ -1,17 +1,19 @@
 name: Retrieve a random object
 type: sample
-author: 
+author:
   name: claudio.petrini
   link: https://github.com/claudiopetrini
 order: 27
 description: |
   How to use the Stamplay Node.js SDK to get a random Stamplay Object
-note:
-  title: instructions
-  content: |
+meta:
+  wt-editor: https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js
+  wt-editor-language: javascript
+  wt-editor-template-instructions: |
     This template shows how to use the Stamplay Node.js SDK to retrieve a random Stamplay Object.
-code:
-  es6: |
+  wt-node-dependencies: |
+    { "stamplay": "1.0.8"}
+code: |
     const Stamplay = require('stamplay@1.0.8');
 
     module.exports = function (context, cb) {
@@ -37,10 +39,10 @@ code:
         });
       });
     };
-secrets : 
-  apiKey : 'STAMPLAY_API_KEY'    
-sampleRequest: 
+secrets :
+  apiKey : 'STAMPLAY_API_KEY'
+sampleRequest:
   method: 'GET'
-settings:
+body:
   parse: true
   merge: true

@@ -30,8 +30,6 @@ code: |
     };
 secrets :
   apiKey : 'STAMPLAY_API_KEY'
-sampleRequest:
-  method: 'GET'
 body:
   parse: true
   merge: true

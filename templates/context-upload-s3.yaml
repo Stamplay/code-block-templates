@@ -48,12 +48,6 @@ code: |
 secrets :
   ACCESSKEY : 'ACCESSKEY'
   SECRETKEY : 'SECRETKEY'
-sampleRequest:
-  method: 'POST'
-  type: 'json'
-  mode: 'body'
-  data: |
-    { "url" : "https://mydomain.com/image.jpg"}
 body:
   parse: true
   merge: true

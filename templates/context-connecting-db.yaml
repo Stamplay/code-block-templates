@@ -35,12 +35,6 @@ code: |
         });
       });
     };
-sampleRequest:
-  method: 'POST'
-  type: 'json'
-  mode: 'body'
-  data: |
-    {"port" : 6379, "url" : "url"}
 body:
   parse: true
   merge: true

@@ -16,12 +16,6 @@ code: |
       const name = context.data.name || "World";
       return callback(null, "Hello " + name);
     };
-sampleRequest:
-  method: 'POST'
-  type: 'json'
-  mode: 'body'
-  data: |
-    { "name" : "there"}
 body:
   parse: true
   merge: true

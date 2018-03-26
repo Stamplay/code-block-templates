@@ -42,12 +42,6 @@ code: |
           return cb(null, result);
         }, options);
     };
-sampleRequest:
-  method: 'POST'
-  type: 'json'
-  mode: 'body'
-  data: |
-    {"url" : "https://res.cloudinary.com/demo/image/upload/butterfly.jpg"}
 secrets :
   api_key : 'CLOUDINARY_API_KEY'
   api_secret : 'CLOUDINARY_API_SECRET'

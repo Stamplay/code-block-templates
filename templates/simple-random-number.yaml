@@ -21,12 +21,6 @@ code: |
         random,
       });
     };
-sampleRequest:
-  method: 'POST'
-  type: 'json'
-  mode: 'body'
-  data: |
-    {}
 body:
   parse: true
   merge: true

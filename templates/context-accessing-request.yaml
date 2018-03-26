@@ -16,8 +16,6 @@ meta:
     body parameters in context.body
     secrets in context.secrets
     context.data is just a convenient way to merge all the request parameters in an accessible key.
-  wt-node-dependencies: |
-    { "dns": "0.2.2"}
 description: |
   How to access to request body or query parameter.
 code: |
@@ -25,12 +23,6 @@ code: |
     module.exports = function (context, callback) {
       return dns.resolve(context.query.url, callback);
     };
-sampleRequest:
-  method: 'POST'
-  type: 'json'
-  mode: 'body'
-  data: |
-    { "url" : "google.com"}
 body:
   parse: true
   merge: true

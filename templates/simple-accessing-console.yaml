@@ -24,12 +24,6 @@ code: |
       console.log('Hello world in console');
       return cb(null, 'Hello world, check the logs section in the Editor!');
     };
-sampleRequest:
-  method: 'POST'
-  type: 'json'
-  mode: 'body'
-  data: |
-    {}
 body:
   parse: true
   merge: true

@@ -14,17 +14,11 @@
       "wt-editor-template-instructions": "As you can see the function we're defining takes a callback\nfunction that must be invoked when the code is completed.\nSince this code will run in a Node.js environment the callback\nwill take as a first argument an error and as a second argument\nthe result which can be a string, a number, or an object that will\nbe stringified as JSON.\n"
     },
     "code": "module.exports = function (cb) {\n  /**\n  *\n  * if you want to send a json instead\n  *  return cb(null,{\n  *    hello: 'world'\n  *  });\n  */\n  return cb(null, 'Hello world!');\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "7c0f7013f4ab762b7e932054fdc2c33b"
+    "id": "bf2cc83fd55a6b2b4c1e7844b960e0b4"
   },
   {
     "name": "Accessing console",
@@ -41,17 +35,11 @@
       "wt-editor-template-instructions": "For debugging purposes can be useful have a look at the variable\nvalues by using console.log. You can see real time logs by enabling\nthe console from the Editor.\n\nAfter each Code Block execution you can see the request and the\nresponse body in the Stamplay Editor from the Logs view.\n"
     },
     "code": "module.exports = function (cb) {\n  /**\n   * You can see the console.log output in the Code Block log from the real time console\n   */\n  console.log('Hello world in console');\n  return cb(null, 'Hello world, check the logs section in the Editor!');\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "6cd7b9c8fc0f4fb9a3d8643615e759c1"
+    "id": "6a678cfa4ea5e6b32719d6da6d6a194e"
   },
   {
     "name": "Handling errors",
@@ -68,17 +56,11 @@
       "wt-editor-template-instructions": "Sometimes you just want to return an error, other time you just want to handle it in a nicer way.\nThe callback function can be invoked with a string or an object that has the property `message` in it in order to make the CodeBlock return with an error.\n"
     },
     "code": "module.exports = function (cb) {\n  return cb({\n    message: 'Sending error in obj'\n  });\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "52dd39bd097b0b781a30ba7b01d1e21d"
+    "id": "42cd8ecdb4ddd032259d8b678023e61c"
   },
   {
     "name": "Random number",
@@ -95,17 +77,11 @@
       "wt-editor-template-instructions": "How to generate a random number using a Code Block.\n"
     },
     "code": "module.exports = function (cb) {\n  const min = 1;\n  const max = 100;\n  const random = Math.floor((Math.random() * max) + min);\n\n  return cb(null, {\n    random,\n  });\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "2359347e1d82e522e60535a00eb76adb"
+    "id": "a9609c8c529e96921ffffb749989ab9b"
   },
   {
     "name": "Asynchronous code",
@@ -122,17 +98,11 @@
       "wt-editor-template-instructions": "Since you have a callback you can execute any kind of asynchronous code you like.\nHere you can see that we're just using the setTimeout function but you can connect to a database (but make sure to use secrets!), execute a query and then return the results of the query.\nPlease note that a CodeBlock execution can last at maximum 60 seconds.\n"
     },
     "code": "module.exports = function (cb) {\n  return setTimeout(function () {\n    return cb(null, 'Hi');\n  }, 1000);\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "5c84953c2431ae3db144666f9448fde7"
+    "id": "c62845e5da83d03d5b6192c31356b0dd"
   },
   {
     "name": "Making HTTP requests",
@@ -150,17 +120,11 @@
       "wt-node-dependencies": "{ \"request\":\"2.85.0\"}\n"
     },
     "code": "const request = require('request');\nmodule.exports = function (cb) {\n  return request('http://google.com', function (err, response, body) {\n    return cb(err, response.statusCode);\n  });\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "76130910971db7cb82996b4dbc5c7482"
+    "id": "d69660c7ff198baa383a586a8676acbb"
   },
   {
     "name": "Hello name",
@@ -177,17 +141,11 @@
       "wt-editor-template-instructions": "In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.\n"
     },
     "code": "module.exports = function (context, callback) {\n  const name = context.data.name || \"World\";\n  return callback(null, \"Hello \" + name);\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{ \"name\" : \"there\"}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "671b1629c64e6452c1d82c74399c5b80"
+    "id": "158d8a11d802b79bb980820ceca33dbd"
   },
   {
     "name": "Accessing request",
@@ -200,22 +158,15 @@
     "meta": {
       "wt-editor": "https://cdn.auth0.com/webtask-editor/editors/1/function-editor.js",
       "wt-editor-language": "javascript",
-      "wt-editor-template-instructions": "In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.\nThis example is showing you a CodeBlock that is getting the url parameter in query string is trying to resolve its IP address.\nIf an error occurs the callback will be invoked with the error and it will be back to the client, otherwise a 200 response will be sent.\nIf you want to distinct query parameters from the body parameters you can access the request parameters as follows\nquery parameters in context.query\nbody parameters in context.body\nsecrets in context.secrets\ncontext.data is just a convenient way to merge all the request parameters in an accessible key.\n",
-      "wt-node-dependencies": "{ \"dns\": \"0.2.2\"}\n"
+      "wt-editor-template-instructions": "In order to access request body and/or the request query parameter you have to use a different function signature that takes a context and a callback.\nThis example is showing you a CodeBlock that is getting the url parameter in query string is trying to resolve its IP address.\nIf an error occurs the callback will be invoked with the error and it will be back to the client, otherwise a 200 response will be sent.\nIf you want to distinct query parameters from the body parameters you can access the request parameters as follows\nquery parameters in context.query\nbody parameters in context.body\nsecrets in context.secrets\ncontext.data is just a convenient way to merge all the request parameters in an accessible key.\n"
     },
     "description": "How to access to request body or query parameter.\n",
     "code": "const dns = require('dns');\nmodule.exports = function (context, callback) {\n  return dns.resolve(context.query.url, callback);\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{ \"url\" : \"google.com\"}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "a31e8e2b8db79921ccd9bbdacf71aebd"
+    "id": "b2971cb5e0ed2ee75499e1243272f615"
   },
   {
     "name": "Handling secrets",
@@ -233,12 +184,6 @@
       "wt-node-dependencies": "{ \"request\": \"2.85.0\"}\n"
     },
     "code": "const request = require('request');\nconst url = 'https://codeblocks.stamplayapp.com/api/webhook/v1/get/catch';\n\nmodule.exports = function (context, cb) {\n  const password = context.secrets.secretKey;\n  return request(url, cb)\n    .auth('username', password);\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{ \"url\" : \"google.com\"}\n"
-    },
     "secrets": {
       "secretKey": "secret"
     },
@@ -246,7 +191,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "1285c9d69a3dcab151b7c027fd72420f"
+    "id": "98182d6d94e6359c25c16ae257c46ec0"
   },
   {
     "name": "Parametric random number",
@@ -263,17 +208,11 @@
       "wt-editor-template-instructions": "In this example the CodeBlock will return a random number between 1 and 100.\nWe'll extend later this feature by making the minimum and maximum value parametric by query parameter or via query params.\n"
     },
     "code": "const min = 1;\nconst max = 100;\n\nmodule.exports = function (cb) {\n  const random = Math.floor((Math.random() * max) + min);\n  return cb(null, {\n    random,\n  });\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "418b82b32620c1e567cb3c8699d97955"
+    "id": "5eabce440ecc22fde9197eab2928c513"
   },
   {
     "name": "Levenshtein distance",
@@ -291,17 +230,11 @@
     },
     "description": "How to compute Levenshtein distance across two strings using the fast-levenshtein distance.\n",
     "code": "const levenshtein = require('fast-levenshtein');\n\nmodule.exports = function (context, cb) {\n  return levenshtein.getAsync(context.data.first, context.data.second, (err, result) => {\n    return cb(err , {distance : result});\n  });\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{\"first\" : \"test\", \"second\" : \"tent\"}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "1e0c40ccc163e441ae30d5e4dbe1a84d"
+    "id": "c5798833fcb7e9d0cf35f0934aa5e0bc"
   },
   {
     "name": "Connecting to a database",
@@ -319,17 +252,11 @@
     },
     "description": "How to connect to an external Redis database using a Code Block.\n",
     "code": "module.exports = function (context, cb) {\n  var redis = require('redis');\n  var client = redis.createClient(context.data.port, context.data.url, {});\n  client.auth(context.data.pwd, function () {\n    client.set(\"stringkey\", \"string val\");\n    client.get(\"stringkey\", function (err, reply) {\n      // reply is null when the key is missing\n      console.log(reply);\n      cb(null, reply);\n    });\n  });\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{\"port\" : 6379, \"url\" : \"url\"}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "074927a209c1c0c604344c8872dd63aa"
+    "id": "2a7c5cb3f416e0fec2bc65b28077a740"
   },
   {
     "name": "Face detection with Cloudinary",
@@ -347,12 +274,6 @@
       "wt-node-dependencies": "{ \"cloudinary\": \"1.11.0\"}\n"
     },
     "code": "const cloudinary = require('cloudinary');\nconst options = {\n  public_id: \"eager_sample\",\n  eager: {\n    gravity: \"face\",\n    width: 200,\n    height: 200,\n    crop: 'thumb'\n  }\n}\n\nmodule.exports = function (context, cb) {\n  cloudinary.config({\n    cloud_name: context.data.cloud_name,\n    api_key: context.data.api_key,\n    api_secret: context.data.api_secret,\n    secure: true\n  });\n\n  cloudinary.uploader.upload(\n    context.data.url,\n    function (result) {\n      return cb(null, result);\n    }, options);\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{\"url\" : \"https://res.cloudinary.com/demo/image/upload/butterfly.jpg\"}\n"
-    },
     "secrets": {
       "api_key": "CLOUDINARY_API_KEY",
       "api_secret": "CLOUDINARY_API_SECRET"
@@ -361,7 +282,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "e5f07b47856cbe80becb53fe300ecce9"
+    "id": "4754ef62f923714e52780953f3777bf9"
   },
   {
     "name": "Twitter APIs",
@@ -379,12 +300,6 @@
       "wt-node-dependencies": "{ \"twit\": \"2.2.9\", \"async\":\"2.6.0\"}\n"
     },
     "code": "const Twit = require('twit');\nconst async = require('async');\n\nmodule.exports = function (context, cb) {\n  var T = new Twit({\n    consumer_key: context.secrets.consumer_key,\n    consumer_secret: context.secrets.consumer_secret,\n    access_token: context.secrets.access_token,\n    access_token_secret: context.secrets.access_token_secret\n  });\n  var finalData = [];\n  var eachFn = function (id, eachCb) {\n    var url = 'users/show';\n    T.get(url, { id: id }, function (err, data, response) {\n      if (err) { eachCb(err); } else {\n        finalData.push(data); eachCb();\n      } });\n  };\n  var finalFn = function (err) {\n    cb(err, finalData);\n  };\n  T.get('followers/ids', {\n    screen_name: context.data.profile || 'stamplay'\n  }, function (err, data, response) {\n    if(data && data.ids && data.ids[0]){\n      var one = [data.ids[0]];\n      async.eachSeries(one, eachFn, finalFn);\n    }else{\n      callback('No follower found');\n    }\n  });\n}\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{\"profile\" : \"stamplay\"}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
@@ -395,7 +310,7 @@
       "access_token": "TWITTER_ACCESS_TOKEN",
       "access_token_secret": "TWITTER_ACCESS_TOKEN_SECRET"
     },
-    "id": "6c81d00a08e2f367ddea496d362fcf0f"
+    "id": "854d0ae09ee3cbbd6d5bd067ad0f8c32"
   },
   {
     "name": "Response with custom headers",
@@ -412,17 +327,11 @@
       "wt-editor-template-instructions": "We can easily add some custom headers to the response since that with full control we can control everything.\n"
     },
     "code": "module.exports = function(context, req, res) {\n  res.setHeader('x-custom-header', 'custom!');\n  res.writeHead(200, {'Content-Type': 'application/json'});\n  var result = {\n    hello : 'world'\n  };\n  res.end(JSON.stringify(result));\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "a600c56c36a85795733b32583b4d7776"
+    "id": "584477a500ed1596bac6044236c85849"
   },
   {
     "name": "Accessing the request",
@@ -439,17 +348,11 @@
       "wt-editor-template-instructions": "In order to have a full control of the CodeBlock we need to use a third, different function signature that takes three arguments context,req and res.\nIn this example we'll send a json in the response but since now we've got control full control of it we'll need to set the correct Content-Type manually.\nThis kind of control open to developers infinite use cases that process the request in different and unusual ways.\n"
     },
     "code": "module.exports = function(context, req, res){\n res.writeHead(200, { 'Content-Type': 'application/json'});\n res.end('{\"hello\": \"world\"}');\n}\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "7ef712a8fe6092ef213b2111dce16006"
+    "id": "80a66fa035704fc46b8669955f9d95ec"
   },
   {
     "name": "Handling multipart/form-data content-type",
@@ -467,17 +370,11 @@
       "wt-node-dependencies": "{ \"multiparty\": \"4.1.2\"}\n"
     },
     "code": "const multiparty = require('multiparty@4.1.2');\n\nmodule.exports = function(context, req, res){\n    var form = new multiparty.Form();\n\n    form.parse(req, function(err, fields, files) {\n      res.writeHead(200, {'content-type': 'application/json'});\n      const result = {fields, files};\n      res.end(JSON.stringify(result));\n    });\n}\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": {}
-    },
     "body": {
       "parse": false,
       "merge": true
     },
-    "id": "9a186f48c27246331ea5dffbb91a39e0"
+    "id": "bf5c86aa85f9afded51e67cba9f0b0b2"
   },
   {
     "name": "Express",
@@ -499,7 +396,7 @@
       "parse": false,
       "merge": false
     },
-    "id": "0ed26add90e10bbf4ff5789de06ed867"
+    "id": "aa749444d2c0721e651cb7dec0dbf055"
   },
   {
     "name": "Express with view",
@@ -521,7 +418,7 @@
       "parse": false,
       "merge": false
     },
-    "id": "dc985a73c6c7510a2fc7986cb87d141a"
+    "id": "f5c3b983ac8ff7434d732a84a96985d1"
   },
   {
     "name": "Express with mlab",
@@ -546,7 +443,7 @@
       "parse": false,
       "merge": false
     },
-    "id": "075eca7ad5eb809b6a8d057ba8ed4f14"
+    "id": "0e6b1dc0657197c8b36649b7e9041308"
   },
   {
     "name": "Automatically tag new versions",
@@ -571,7 +468,7 @@
       "parse": true,
       "merge": true
     },
-    "id": "ddeafd31e9a8131b2ccd7f2793669289"
+    "id": "9d32ec65719811d51efc2bd8e357d677"
   },
   {
     "name": "Query a Stamplay Object",
@@ -592,14 +489,11 @@
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
-    "sampleRequest": {
-      "method": "GET"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "04b67e836b92b2d767111c50b001656e"
+    "id": "510dd4c967209f994d7fc208cd850fad"
   },
   {
     "name": "Query a Stamplay Object by _id",
@@ -620,14 +514,11 @@
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
-    "sampleRequest": {
-      "method": "GET"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "62f22d6986e803a236a55ff281daa0d2"
+    "id": "564be72ed379ce364010dd93bf3c5e0c"
   },
   {
     "name": "Create a Stamplay Object",
@@ -648,14 +539,11 @@
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
-    "sampleRequest": {
-      "method": "GET"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "ad0e5bd36c749ee325496eb6878edcca"
+    "id": "46152b59b0240a65010059f9c6baadb4"
   },
   {
     "name": "Update an existing Stamplay Object",
@@ -676,14 +564,11 @@
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
-    "sampleRequest": {
-      "method": "GET"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "87578bfc418dcfa02685e57626d50987"
+    "id": "1f0a0ba8998e1f4e044a27671e7ef2b8"
   },
   {
     "name": "Delete an existing Stamplay Object",
@@ -704,14 +589,11 @@
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
-    "sampleRequest": {
-      "method": "GET"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "ed0f7f84aa3f9a521165aa4cc47fb816"
+    "id": "1012a5248a468de328865284cccc9f9c"
   },
   {
     "name": "Retrieve a random object",
@@ -732,14 +614,11 @@
     "secrets": {
       "apiKey": "STAMPLAY_API_KEY"
     },
-    "sampleRequest": {
-      "method": "GET"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "0fa756409c010f5ee8fabc073c7958c6"
+    "id": "41e6b1ca4f69a7adc69f3caafa0265ff"
   },
   {
     "name": "Upload a file to S3",
@@ -761,17 +640,11 @@
       "ACCESSKEY": "ACCESSKEY",
       "SECRETKEY": "SECRETKEY"
     },
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{ \"url\" : \"https://mydomain.com/image.jpg\"}\n"
-    },
     "body": {
       "parse": true,
       "merge": true
     },
-    "id": "a9de376f2f906cadf61878e90c936b34"
+    "id": "6c444058f3d52832e261294097f4528b"
   },
   {
     "name": "IBM Watson Speech to Text",
@@ -789,12 +662,6 @@
       "wt-node-dependencies": "{ \"request\":\"2.67.0\", \"watson-developer-cloud\":\"3.2.1\"}\n"
     },
     "code": "const request = require('request@2.67.0');\nconst SpeechToTextV1 = require('watson-developer-cloud/speech-to-text/v1');\n\nmodule.exports = function (context, cb) {\n\n  //a public fileUrl passed as a parameter to the Code Block\n  //e.g https://app.box.com/shared/static/8kt9roithydgnz80bonk9ea9oh7n2hfm.wav\n  const fileUrl = context.data.fileUrl;\n\n  //Initialize Watson SpeechToText\n  const speech_to_text = new SpeechToTextV1({\n    username: context.secrets.watson_username,\n    password: context.secrets.watson_password\n  });\n\n  //prepare the request content for Watson\n  const params = {\n    audio: request(fileUrl),\n    content_type: 'audio/wav' //'audio/flac', 'audio/l16; rate=44100', 'audio/ogg;codecs=opus'\n  };\n\n  //pass the audio file to Watson\n  return speech_to_text.recognize(params, function(err, res) {\n    if (err) {\n      return cb(err)\n    }\n    return cb(null, res)\n  });\n};\n",
-    "sampleRequest": {
-      "method": "POST",
-      "type": "json",
-      "mode": "body",
-      "data": "{\"fileUrl\" : \"https://app.box.com/shared/static/8kt9roithydgnz80bonk9ea9oh7n2hfm.wav\"}\n"
-    },
     "secrets": {
       "watson_username": "IBM_Speech_to_text_username",
       "watson_password": "IBM_Speech_to_text_password"
@@ -803,6 +670,6 @@
       "parse": true,
       "merge": true
     },
-    "id": "512bc8b0fb0e2f75fb0f61b33245a3d9"
+    "id": "248236c7751b6c87f15028a6f97996db"
   }
 ]

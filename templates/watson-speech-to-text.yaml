@@ -43,12 +43,6 @@ code: |
         return cb(null, res)
       });
     };
-sampleRequest:
-  method: 'POST'
-  type: 'json'
-  mode: 'body'
-  data: |
-    {"fileUrl" : "https://app.box.com/shared/static/8kt9roithydgnz80bonk9ea9oh7n2hfm.wav"}
 secrets:
   watson_username : 'IBM_Speech_to_text_username'
   watson_password : 'IBM_Speech_to_text_password'

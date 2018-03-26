@@ -48,12 +48,6 @@ code: |
         }
       });
     }
-sampleRequest:
-  method: 'POST'
-  type: 'json'
-  mode: 'body'
-  data: |
-    {"profile" : "stamplay"}
 body:
   parse: true
   merge: true

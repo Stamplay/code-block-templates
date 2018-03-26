@@ -22,12 +22,6 @@ code: |
         return cb(err , {distance : result});
       });
     };
-sampleRequest:
-  method: 'POST'
-  type: 'json'
-  mode: 'body'
-  data: |
-    {"first" : "test", "second" : "tent"}
 body:
   parse: true
   merge: true
